@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Meta Softtech IT Solutions Consultancy HTML5 Template</title>
+    <title>Meta Softtech Private Limited</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -118,7 +118,7 @@
 
 
                     <div class="col-lg-8 col-sm-8 col-xl-8">
-                        <div class="description">
+                        <div class="">
                                 <p class="text">At The Meta Softech  Pvt Ltd, we’re committed to delivering transformative outcomes – including for our employees. It’s why we put people at the center of everything we do. Whether that means providing upskilling programs, empowering our team with innovative tools and technologies like generative AI, or giving you the opportunity to work with some of the most knowledgeable leaders in the industry, we make sure everyone at The Meta Softech  Pvt Ltd has what they need to advance their career.</p>
                                 <p class="text">
                                 Whether you’re just entering the workforce or are an experienced professional, there’s a place for you here. We’re on the cutting edge – come meet us there.
