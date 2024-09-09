@@ -38,6 +38,9 @@
 
 <body>
 
+
+
+
     <div class="main-wrapper">
 
 
@@ -161,13 +164,13 @@
                                         <span class="sub-title"> Join Our Talented Team </span>
                                         
                                     </div> -->
-                                    <form action="#">
+                                    <form action="#" method="post">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
                                                 <label>Name</label>
-                                                    <input type="text" placeholder="Name *">
+                                                    <input type="text" placeholder="Name *" name="name">
                                                 </div>
                                                 <!-- Single Form End -->
                                             </div>
@@ -175,7 +178,7 @@
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
                                                 <label>Email</label>
-                                                    <input type="email" placeholder="Email *">
+                                                    <input type="email" placeholder="Email *" name="email">
                                                 </div>
                                                 <!-- Single Form End -->
                                             </div>
@@ -183,7 +186,7 @@
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
                                                 <label>Phone</label>
-                                                    <input type="tel" placeholder="Phone" maxlength="10" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                                                    <input type="tel" placeholder="Phone" name="phone" maxlength="10">
                                                 </div>
                                                 <!-- Single Form End -->
                                             </div>
@@ -201,14 +204,14 @@
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
                                                 <label>Message</label>
-                                                    <textarea placeholder="Write A Message"></textarea>
+                                                    <textarea placeholder="Write A Message" name="message"></textarea>
                                                 </div>
                                                 <!-- Single Form End -->
                                             </div>
                                             <div class="col-sm-12">
                                                 <!--  Single Form Start -->
                                                 <div class="form-btn">
-                                                    <button class="btn" type="submit">Send Message</button>
+                                                    <button class="btn" type="submit" name="submit">Send Message</button>
                                                 </div>
                                                 <!--  Single Form End -->
                                             </div>
