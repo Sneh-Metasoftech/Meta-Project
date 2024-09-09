@@ -119,8 +119,8 @@
 
                     <div class="col-lg-8 col-sm-8 col-xl-8">
                         <div class="description">
-                                <p>At The Meta Softech  Pvt Ltd, we’re committed to delivering transformative outcomes – including for our employees. It’s why we put people at the center of everything we do. Whether that means providing upskilling programs, empowering our team with innovative tools and technologies like generative AI, or giving you the opportunity to work with some of the most knowledgeable leaders in the industry, we make sure everyone at The Meta Softech  Pvt Ltd has what they need to advance their career.</p>
-                                <p>
+                                <p class="text">At The Meta Softech  Pvt Ltd, we’re committed to delivering transformative outcomes – including for our employees. It’s why we put people at the center of everything we do. Whether that means providing upskilling programs, empowering our team with innovative tools and technologies like generative AI, or giving you the opportunity to work with some of the most knowledgeable leaders in the industry, we make sure everyone at The Meta Softech  Pvt Ltd has what they need to advance their career.</p>
+                                <p class="text">
                                 Whether you’re just entering the workforce or are an experienced professional, there’s a place for you here. We’re on the cutting edge – come meet us there.
                                 </p>
                         </div>
