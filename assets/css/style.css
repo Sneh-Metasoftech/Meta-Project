@@ -9179,3 +9179,8 @@ textarea:-ms-input-placeholder {
 .bdr{
   border-radius: 6%;
 }
+.txt{
+  font-size: 16px;
+  line-height: 30px;
+  margin-top: 25px;
+}

@@ -105,44 +105,62 @@
             </div>
         </div>
         <!-- Page Banner End -->
-
-        <div class="container">
-            <div class="row">
-            <h3 class="title text-center">Careers at The Meta Softech Pvt Ltd </h3>
-                    <div class="col-lg-4 col-sm-4 col-xl-4">
-                        <div>
-                            <img src="assets/images/carrer.jpg" alt="carrer.jpg" class="bdr">
+      
+        <div class="section techwix-about-section-04 section-padding">
+                                 
+                
+                           
+            
+            <div class="shape-1"></div>
+            <div class="container">
+                <!-- About Wrapper Start -->
+                <h2 class="title text-center">Careers at The Meta Softech Pvt Ltd</h2><br><br>
+                <div class="about-wrap">
+                    <div class="row">
+                   
+                    <div class="col-lg-4">
+                            <!-- About Image Wrap Start -->
+                            <div class="about-img-wrap">
+                               
+                                <div class="about-img about-img-big">
+                                    <img src="assets/images/carrer.jpg" alt="">
+                                </div>
+                              
+                            <!-- About Image Wrap End -->
                         </div>
-
                     </div>
+                        <div class="col-lg-8">
+                            <!-- About Content Wrap Start -->
+                            <div class="about-content-wrap">
+                              
+                                <p class="text">At The Meta Softech Pvt Ltd, we’re committed to delivering transformative outcomes – including for our employees. It’s why we put people at the center of everything we do. Whether that means providing upskilling programs, empowering our team with innovative tools and technologies like generative AI, or giving you the opportunity to work with some of the most knowledgeable leaders in the industry, we make sure everyone at The Meta Softech Pvt Ltd has what they need to advance their career.</p>
 
-
-                    <div class="col-lg-8 col-sm-8 col-xl-8">
-                        <div class="">
-                                <p class="text">At The Meta Softech  Pvt Ltd, we’re committed to delivering transformative outcomes – including for our employees. It’s why we put people at the center of everything we do. Whether that means providing upskilling programs, empowering our team with innovative tools and technologies like generative AI, or giving you the opportunity to work with some of the most knowledgeable leaders in the industry, we make sure everyone at The Meta Softech  Pvt Ltd has what they need to advance their career.</p>
-                                <p class="text">
-                                Whether you’re just entering the workforce or are an experienced professional, there’s a place for you here. We’re on the cutting edge – come meet us there.
-                                </p>
+                                <p class="text">Whether you’re just entering the workforce or are an experienced professional, there’s a place for you here. We’re on the cutting edge – come meet us there.</p>
+                               
+                            </div>
+                            <!-- About Content Wrap End -->
                         </div>
-                    </div>
-
+                     
+                </div>
+                <!-- About Wrapper End -->
             </div>
         </div>
+        <!-- About End -->
         <!-- Contact Start -->
         <div class="section techwix-contact-section techwix-contact-section-02 techwix-contact-section-03 section-padding-02">
             <div class="container">
                 <!-- Contact Wrap Start -->
-                <div class="contact-wrap">
+                <div class="contact-wrap" style="    width: 75%;
+    margin: 0 auto;">
                     <div class="row justify-content-center">
                         <div class="col-lg-10">
                             <!-- Contact Form Start -->
                             <div class="contact-form">
                                 <div class="contact-form-wrap">
-                                    <div class="heading-wrap text-center">
+                                    <!-- <div class="heading-wrap text-center">
                                         <span class="sub-title"> Join Our Talented Team </span>
-                                        <h3 class="title">Unleash Your Potential:
-                                        Join the Revolution at The Meta Softech Pvt Ltd</h3>
-                                    </div>
+                                        
+                                    </div> -->
                                     <form action="#">
                                         <div class="row">
                                             <div class="col-sm-6">
