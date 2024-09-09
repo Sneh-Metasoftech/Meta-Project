@@ -106,7 +106,23 @@
         </div>
         <!-- Page Banner End -->
 
+        <div class="container">
+            <div class="row">
 
+                    <div class="col-lg-4 col-sm-4 col-xl-4">
+                        <div>
+                            
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-8 col-sm-8 col-xl-8">
+
+                    </div>
+
+            </div>
+        </div>
         <!-- Contact Start -->
         <div class="section techwix-contact-section techwix-contact-section-02 techwix-contact-section-03 section-padding-02">
             <div class="container">
