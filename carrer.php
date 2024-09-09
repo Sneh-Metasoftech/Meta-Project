@@ -108,10 +108,10 @@
 
         <div class="container">
             <div class="row">
-            <h1 class="analytics-title text-center">Careers at The Meta Softech Pvt Ltd </h1>
+            <h3 class="title text-center">Careers at The Meta Softech Pvt Ltd </h3>
                     <div class="col-lg-4 col-sm-4 col-xl-4">
                         <div>
-                            <img src="assets/images/carrer.jpg" alt="carrer.jpg">
+                            <img src="assets/images/carrer.jpg" alt="carrer.jpg" class="bdr">
                         </div>
 
                     </div>

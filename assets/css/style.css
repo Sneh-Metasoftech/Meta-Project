@@ -9176,3 +9176,6 @@ textarea:-ms-input-placeholder {
 .mt{
   margin-top: -21px;
 }
+.bdr{
+  border-radius: 6%;
+}
