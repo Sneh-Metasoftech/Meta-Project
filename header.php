@@ -43,12 +43,12 @@
 
 
 <!-- Preloader start -->
-<div id="preloader">
+<!-- <div id="preloader">
     <div class="preloader">
         <span></span>
         <span></span>
     </div>
-</div>
+</div> -->
 <!-- Preloader End -->
 
 <!-- Header Start  -->
@@ -256,28 +256,11 @@
             </div>
 
             <!-- Header Meta Start -->
-            <div class="header-meta">
-                <!-- Header Cart Start -->
-                
-                    <!-- Header Dropdown Cart End -->
-                </div>
+            
                 <!-- Header Cart End -->
                 <!-- Header Search Start -->
-                <div class="header-search">
-                    <a class="search-btn" href="#"><i class="flaticon-loupe"></i></a>
-                    <div class="search-wrap">
-                        <div class="search-inner">
-                            <i id="search-close" class="flaticon-close search-close"></i>
-                            <div class="search-cell">
-                                <form action="#">
-                                    <div class="search-field-holder">
-                                        <input class="main-search-input" type="search" placeholder="Search Your Keyword...">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
+                
                 <!-- Header Search End -->
 
                 

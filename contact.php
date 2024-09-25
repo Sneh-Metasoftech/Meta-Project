@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Meta Softtech IT Solutions Consultancy HTML5 Template</title>
+    <title>Meta Softtech Private Limited</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,14 +29,25 @@
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
     <!-- <link rel="stylesheet" href="assets/css/vendor/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css"> -->
+<style>
 
+</style>
 </head>
 
 <body>
+    <div id="preloader">
+    <div class="preloader">
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<!-- Preloader End -->
 
     <div class="main-wrapper">
 
@@ -148,7 +159,7 @@
                                 </div>
                                 <div class="info-content">
                                     <h5 class="title">Visit our office</h5>
-                                    <p>New York. 112 W 34th St caroline, USA</p>
+                                    <p>47/333 Civil Lines Opposite Premkunj Raipur C.G 492001</p>
                                 </div>
                             </div>
                             <!--Single Contact Info End -->
@@ -174,49 +185,61 @@
                                         <span class="sub-title"> request a quote</span>
                                         <h3 class="title">How May We Help You!</h3>
                                     </div>
-                                    <form action="#">
+                                    <form action="#" method="post">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
-                                                <label>Name</label>
-                                                    <input type="text" placeholder="Name *">
+                                                
+                                                    <input type="text" placeholder="Name *" name="name" required>
                                                 </div>
                                                 <!-- Single Form End -->
                                             </div>
                                             <div class="col-sm-6">
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
-                                                <label>Email</label>
-                                                    <input type="email" placeholder="Email *">
+                                              
+                                                    <input type="email" placeholder="Email *" name="email" required>
                                                 </div>
                                                 <!-- Single Form End -->
                                             </div>
                                             <div class="col-sm-12">
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
-                                                <label>Phone</label>
-                                                    <input type="tel" placeholder="Phone" maxlength="10" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                                              
+                                                    <input type="tel" placeholder="Phone" maxlength="10"  name="phone" required>
                                                 </div>
                                                 <!-- Single Form End -->
                                             </div>
+
                                             <div class="col-sm-12">
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
-                                                <label>Message</label>
-                                                    <textarea placeholder="Write A Message"></textarea>
+                                               
+                                                    <input type="tel" placeholder="subject"  name="sub" required>
+                                                </div>
+                                                <!-- Single Form End -->
+                                            </div>
+
+                                            <div class="col-sm-12">
+                                                <!-- Single Form Start -->
+                                                <div class="single-form">
+                                                
+                                                    <textarea placeholder="Write A Message" name="msg"></textarea>
                                                 </div>
                                                 <!-- Single Form End -->
                                             </div>
                                             <div class="col-sm-12">
                                                 <!--  Single Form Start -->
                                                 <div class="form-btn">
-                                                    <button class="btn" type="submit">Send Message</button>
+                                                    <button class="btn "  type="submit" name="submit">Send Message</button>
                                                 </div>
                                                 <!--  Single Form End -->
                                             </div>
                                         </div>
                                     </form>
+                                    <div class="spinner hidden" id="spinner"></div>
+                                    <div id="result"></div>
                                 </div>
                             </div>
                             <!-- Contact Form End -->
@@ -231,12 +254,10 @@
         <!-- Contact Map Start -->
         <div class="section contact-map-section">
             <div class="contact-map-wrap">
-                <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=New%20York%20University%20&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near" title="New York University" aria-label="New York University" frameborder="0"></iframe>
+                <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3718.7368054312064!2d81.64366407596573!3d21.242282930055907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDE0JzMyLjIiTiA4McKwMzgnNTQuNyJF!5e0!3m2!1sen!2sin!4v1726665230431!5m2!1sen!2sin" title="New York University" aria-label="New York University" frameborder="0"></iframe>
             </div>
         </div>
         <!-- Contact Map End -->
-
-
        <?php
        
                     include("footer.php");
@@ -250,6 +271,77 @@
         <!-- back to top end -->
 
     </div>
+<?php
+ //Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+    if(isset($_POST['submit'])){
+        $name   =$_POST['name'];
+        $email =$_POST['email'];
+        $phone =$_POST['phone'];
+        $subject =$_POST['sub'];
+        $message =$_POST['msg'];
+        //Load Composer's autoloader
+        require 'PHP-Mailer/Exception.php';
+        require 'PHP-Mailer/PHPMailer.php';
+        require 'PHP-Mailer/SMTP.php';
+        
+        //Create an instance; passing `true` enables exceptions
+        $mail = new PHPMailer(true);
+        
+        try {
+            //Server settings
+                                 //Enable verbose debug output
+            $mail->isSMTP();                                            //Send using SMTP
+            $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+            $mail->Username   = 'tripathisneh786@gmail.com';                     //SMTP username
+            $mail->Password   = 'hhrkkkvdjqwyzhkz';                               //SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+            $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        
+            //Recipients
+            $mail->setFrom('snehtripathisonti28@gmail.com', 'Meta Softech Private Limited');
+            $mail->addAddress('tripathisneh8858@gmail.com', 'Meta Softech');     //Add a recipient
+            // $mail->addAddress('ellen@example.com');               //Name is optional
+            // $mail->addReplyTo('info@example.com', 'Information');
+            // $mail->addCC('cc@example.com');
+            // $mail->addBCC('bcc@example.com');
+        
+            // //Attachments
+            //$mail->addAttachment('C:\xamppp\htdocs\Meta-Project\assets\images\about-1.jpg');         //Add attachments
+            // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+        
+            //Content
+            $mail->isHTML(true);                                  //Set email format to HTML
+            $mail->Subject = $subject;
+            $mail->Body    = "Sende-Name -$name <br> Sender-Email -$email <br> Phone No -$phone <br> Meassage -$message";
+          
+        
+            $mail->send();
+            // echo 'Message has been sent';
+        
+         echo '<script>
+               Swal.fire({
+                    title: "Success!",
+                    text: "your request has been Submmited Sucessfully !",
+                    icon: "success",
+                    showConfirmButton: true,
+                    
+                    });
+               
+            </script>';
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
+    }
+   
+
+
+?>
+
 
     <!-- JS
     ============================================ -->

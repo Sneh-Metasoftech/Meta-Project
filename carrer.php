@@ -1,3 +1,6 @@
+<?php
+        $message = "This is a modal pop-up message from PHP!";
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -29,10 +32,12 @@
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
     <!-- <link rel="stylesheet" href="assets/css/vendor/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css"> -->
+
 
 </head>
 
@@ -95,10 +100,10 @@
                         <div class="col-lg-12">
                             <!-- Page Banner Content Start -->
                             <div class="page-banner text-center">
-                                <h2 class="title">Carrer</h2>
+                                <h2 class="title">Career</h2>
                                 <ul class="breadcrumb justify-content-center">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Carrer</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Career</li>
                                 </ul>
                             </div>
                             <!-- Page Banner Content End -->
@@ -149,6 +154,134 @@
             </div>
         </div>
         <!-- About End -->
+
+        <?php
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+if(isset($_POST['submit'])){
+    $name   = $_POST['name'];
+    $email  = $_POST['email'];
+    $phone  = $_POST['phone'];
+    $message = $_POST['msg'];
+    
+
+    // echo '<pre>';
+    // print_r($_POST);
+    // // echo '<br>';
+    
+    // echo '</pre>';
+    // echo '<pre>';
+    // print_r($_FILES);
+    // // echo '<br>';
+    
+    // echo '</pre>';
+    // // die;
+    $file = $_FILES['file'] ['name'];
+                                                        
+    $fileTmpName =$_FILES['file']['tmp_name'];
+    $fileSize = $_FILES['file']['size'];
+    
+    $allowedExt = array("pdf");
+    $fileExt = pathinfo($file, PATHINFO_EXTENSION);
+    
+    // Validate file type
+    if (in_array($fileExt, $allowedExt)) {
+        // Validate file size (limit to 5MB)
+        if ($fileSize <= 5 * 1024 * 1024) { // 5MB in bytes
+            //echo "File is valid and within size limit";
+            if(move_uploaded_file("$fileTmpName","upload/".$file)){
+               //echo "file uploaded successfully";
+                // die;
+            }else{
+                echo "failed to move file";
+                die;
+            }
+            // Your mail sending logic here
+        } else {
+            echo 
+                    '<script>
+                    Swal.fire({
+                    title: "Oops!",
+                    text: "File is too large. Maximum allowed size is 5MB.",
+                    icon: "warning",
+                    showConfirmButton: true,
+                    
+                    });
+               </script>';
+            
+        }
+    } else {
+        echo "Only PDF files are allowed.";
+        die;
+        
+    }
+
+    // Your email logic here
+
+       //Load Composer's autoloader
+       require 'PHP-Mailer/Exception.php';
+       require 'PHP-Mailer/PHPMailer.php';
+       require 'PHP-Mailer/SMTP.php';
+       
+       //Create an instance; passing `true` enables exceptions
+       $mail = new PHPMailer(true);
+       
+       try {
+           //Server settings
+                                //Enable verbose debug output
+           $mail->isSMTP();                                            //Send using SMTP
+           $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+           $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+           $mail->Username   = 'tripathisneh786@gmail.com';                     //SMTP username
+           $mail->Password   = 'hhrkkkvdjqwyzhkz';                               //SMTP password
+           $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+           $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+       
+           //Recipients
+           $mail->setFrom('snehtripathisonti28@gmail.com', 'Meta Softech Private Limited');
+           $mail->addAddress('tripathisneh8858@gmail.com', 'Meta Softech');     //Add a recipient
+           // $mail->addAddress('ellen@example.com');               //Name is optional
+           // $mail->addReplyTo('info@example.com', 'Information');
+           // $mail->addCC('cc@example.com');
+           // $mail->addBCC('bcc@example.com');
+       
+           // //Attachments
+           $mail->addAttachment("upload/".$file, $file);      //Add attachments
+           // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+       
+           //Content
+           $mail->isHTML(true);                                  //Set email format to HTML
+           $mail->Subject = 'Carrer Form';
+           $mail->Body    = "Sende-Name -$name <br> Sender-Email -$email <br> Phone No -$phone <br> Meassage -$message ";
+         
+       
+           $mail->send();
+           // echo 'Message has been sent';
+       
+
+               echo '<script>
+                    Swal.fire({
+                    title: "Success!",
+                    text: "your request has been Submmited Sucessfully !",
+                    icon: "success",
+                    showConfirmButton: true,
+                    
+                    });
+               </script>';
+ 
+              
+        
+       } catch (Exception $e) {
+          // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+       }
+   }
+  
+
+
+?>
         <!-- Contact Start -->
         <div class="section techwix-contact-section techwix-contact-section-02 techwix-contact-section-03 section-padding-02">
             <div class="container">
@@ -164,12 +297,12 @@
                                         <span class="sub-title"> Join Our Talented Team </span>
                                         
                                     </div> -->
-                                    <form action="#" method="post">
+                                    <form action="#" method="post" enctype="multipart/form-data">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
-                                                <label>Name</label>
+                                              
                                                     <input type="text" placeholder="Name *" name="name">
                                                 </div>
                                                 <!-- Single Form End -->
@@ -177,7 +310,7 @@
                                             <div class="col-sm-6">
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
-                                                <label>Email</label>
+                                              
                                                     <input type="email" placeholder="Email *" name="email">
                                                 </div>
                                                 <!-- Single Form End -->
@@ -185,7 +318,7 @@
                                             <div class="col-sm-12">
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
-                                                <label>Phone</label>
+                                               
                                                     <input type="tel" placeholder="Phone" name="phone" maxlength="10">
                                                 </div>
                                                 <!-- Single Form End -->
@@ -194,8 +327,8 @@
                                             <div class="col-sm-12">
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
-                                                <label for="files">Select files:</label>
-                                                <input type="file" id="files" name="files" multiple>
+                                              
+                                                <input type="file" id="files" name="file" accept="pdf"  >
                                                 </div>
                                                 <!-- Single Form End -->
                                             </div>
@@ -203,15 +336,15 @@
                                             <div class="col-sm-12">
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
-                                                <label>Message</label>
-                                                    <textarea placeholder="Write A Message" name="message"></textarea>
+                                               
+                                                    <textarea placeholder="Write A Message" name="msg"></textarea>
                                                 </div>
                                                 <!-- Single Form End -->
                                             </div>
                                             <div class="col-sm-12">
                                                 <!--  Single Form Start -->
                                                 <div class="form-btn">
-                                                    <button class="btn" type="submit" name="submit">Send Message</button>
+                                                    <button class="btn" type="submit" name="submit" class="open-button" onclick="openForm()">Send Message</button>
                                                 </div>
                                                 <!--  Single Form End -->
                                             </div>
@@ -228,6 +361,7 @@
         </div>
         <!-- Contact End -->
 
+  
 
        <?php
        
@@ -243,6 +377,7 @@
 
     </div>
 
+ 
     <!-- JS
     ============================================ -->
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
@@ -260,11 +395,10 @@
     <script src="assets/js/plugins/jquery.counterup.min.js"></script>
     <script src="assets/js/plugins/appear.min.js"></script>
     <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
-
+  
 
     <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
-
-
+</script>
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 

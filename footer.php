@@ -79,13 +79,15 @@
                         <div class="col-lg-3 col-sm-6">
                             <!-- Footer Widget Start -->
                             <div class="footer-widget-about">
-                                <a class="footer-logo" href="index.php"><img src="assets/images/logo-white.png" alt="Logo"></a>
+                                <a class="footer-logo" href="index.php"><img src="assets/images/logo-white.png" alt="Logo" style="max-width: 115%;"></a>
                                 <!-- <p>Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible freelance talent.</p> -->
                                 <div class="footer-social">
                                     <ul class="social">
                                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        
+                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                         <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -151,7 +153,7 @@
                                                 <i class="flaticon-pin"></i>
                                             </div>
                                             <div class="info-text" style="padding-top:10px;">
-                                                <span>Civil lines Gaurav path beside jabbal tower Raipur CG. Pin 492001</span>
+                                                <span>47 / 333 Civil Lines Opposite Premkunj Raipur C.G 492001</span>
                                             </div>
                                         </li>
                                     </ul>

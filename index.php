@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Meta Softech Private </title>
+    <title>Meta Softtech Private Limited</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -111,65 +111,77 @@
                         <div class="col-xl-3 col-md-6">
                             <!-- Service Item Start -->
                             <div class="service-item-03">
-                                <div class="service-img">
-                                    <img src="assets/images/ser-icon9.png" alt="">
-                                </div>
-                                <div class="service-content">
-                                    <h3 class="title"><a href="service .php">Infrastructure Technology</a></h3>
-                                    <p>Infrastructure technology includes hardware and software systems supporting network, data, and computing services.</p>
-                                    <div class="read-more">
-                                        <a href="service.php"><i class="fas fa-plus"></i> Read More</a>
+                            <div class="choose-us-img">
+                                        <img src="assets/images/counter-1.png" alt="">
                                     </div>
-                                </div>
-                            </div>
+    <div class="service-content">
+        <h3 class="title"><a href="service.php">Infrastructure Technology</a></h3>
+        <p class="short-description">IT infrastructure encompasses the hardware, software, network resources, and services required to manage and support</p>
+        <p class="full-description" style="display: none;">
+        IT infrastructure encompasses the hardware, software, network resources, and services required to manage and support an organization's IT environment. This includes servers, storage systems, networking equipment, operating systems, and data centers. It ensures reliable connectivity, data management, and application performance. Effective IT infrastructure is crucial for operational efficiency, scalability, and security, enabling seamless business operations and supporting digital transformation initiatives.
+        </p>
+        <div class="read-more">
+            <a href="#" class="toggle-description" data-show-text="Read More" data-hide-text="Read Less"><i class="fas fa-plus"></i> Read More</a>
+        </div>
+    </div>
+</div>
                             <!-- Service Item End -->
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <!-- Service Item Start -->
                             <div class="service-item-03">
-                                <div class="service-img">
-                                    <img src="assets/images/ser-icon10.png" alt="">
-                                </div>
-                                <div class="service-content">
-                                    <h3 class="title"><a href="service.php">IT Consultancy & solution</a></h3>
-                                    <p>IT consultancy provides expert advice and tailored solutions to optimize technology and business processes..</p>
-                                    <div class="read-more">
-                                        <a href="service.php"><i class="fas fa-plus"></i> Read More</a>
-                                    </div>
-                                </div>
+                            <div class="choose-us-img">
+                                        <img src="assets/images/ser-icon12.png" alt="">
                             </div>
+    <div class="service-content">
+        <h3 class="title"><a href="service.php">Blockchain System</a></h3>
+        <p class="short-description">A blockchain system is a decentralized digital ledger that records transactions across multiple computers in a secure and immutable.</p>
+        <p class="full-description" style="display: none;">
+        A blockchain system is a decentralized digital ledger that records transactions across multiple computers in a secure and immutable.manner. Each transaction is grouped into blocks and linked in chronological order, creating a chain. This technology ensures transparency, security, and tamper-resistance, making it ideal for applications such as cryptocurrency, supply chain management, and smart contracts.
+        </p>
+        <div class="read-more">
+            <a href="#" class="toggle-description" data-show-text="Read More" data-hide-text="Read Less"><i class="fas fa-plus"></i> Read More</a>
+        </div>
+    </div>
+</div>
                             <!-- Service Item End -->
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <!-- Service Item Start -->
                             <div class="service-item-03">
-                                <div class="service-img">
-                                    <img src="assets/images/ser-icon11.png" alt="">
-                                </div>
-                                <div class="service-content">
-                                    <h3 class="title"><a href="service.php">Cloud managed services</a></h3>
-                                    <p>Cloud managed services offer remote management of cloud infrastructure, ensuring security, scalability, and cost-efficiency.</p>
-                                    <div class="read-more">
-                                        <a href="service.php"><i class="fas fa-plus"></i> Read More</a>
+                            <div class="choose-us-img">
+                                        <img src="assets/images/counter-2.png" alt="">
                                     </div>
-                                </div>
-                            </div>
+    <div class="service-content">
+        <h3 class="title"><a href="service.php">Data Managment</a></h3>
+        <p class="short-description">Data management encompasses the practices and technologies used to collect, store, organize, and protect data throughout its lifecycle.</p>
+        <p class="full-description" style="display: none;">
+        Data management encompasses the practices and technologies used to collect, store, organize, and protect data throughout its lifecycle.This includes data governance, quality assurance, integration, and security measures. Effective data management ensures that data is accurate, accessible, and secure, facilitating informed decision-making and operational efficiency. By establishing protocols and systems for handling data, organizations can optimize their data assets and maintain regulatory compliance.
+        </p>
+        <div class="read-more">
+            <a href="#" class="toggle-description" data-show-text="Read More" data-hide-text="Read Less"><i class="fas fa-plus"></i> Read More</a>
+        </div>
+    </div>
+</div>
                             <!-- Service Item End -->
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <!-- Service Item Start -->
                             <div class="service-item-03">
-                                <div class="service-img">
-                                    <img src="assets/images/ser-icon12.png" alt="">
-                                </div>
-                                <div class="service-content">
-                                    <h3 class="title"><a href="service.php">Blockchain technology</a></h3>
-                                    <p>Blockchain technology securely records transactions in a decentralized ledger, ensuring transparency and immutability.</p>
-                                    <div class="read-more">
-                                        <a href="service.php"><i class="fas fa-plus"></i> Read More</a>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="service-img">
+        <img src="assets/images/ser-icon9.png" alt="">
+    </div>
+    <div class="service-content">
+        <h3 class="title"><a href="service.php">IT Consultancy</a></h3>
+        <p class="short-description">An IT consultancy provides expert guidance to businesses in optimizing their technology strategies Consultants assess current systems</p>
+        <p class="full-description" style="display: none;">
+        An IT consultancy provides expert guidance to businesses in optimizing their technology strategies. Consultants assess current systems, identify inefficiencies, and offer tailored solutions for improvements. Services often include IT infrastructure design, cybersecurity, cloud migration, and software integration. Their goal is to enhance operational efficiency, reduce costs, and support digital transformation.
+        </p>
+        <div class="read-more">
+            <a href="#" class="toggle-description" data-show-text="Read More" data-hide-text="Read Less"><i class="fas fa-plus"></i> Read More</a>
+        </div>
+    </div>
+</div>
                             <!-- Service Item End -->
                         </div>
                     </div>
@@ -178,6 +190,8 @@
             </div>
         </div>
         <!-- Service End -->
+
+
 
         <!-- About Start -->
         <div class="section techwix-about-section-04 section-padding">
@@ -198,8 +212,8 @@
                                 <div class="about-author-info-wrap">
                                     <div class="about-author">
                                         <img src="assets/images/sign.png" alt="">
-                                        <h3 class="name">Amit Ramteke</h3>
-                                        <span class="designation">CEO, The Meta Softech Pvt Ltd.</span>
+                                        <h3 class="name text-center">Amit Ramteke</h3>
+                                        <span class="designation text-center"><p class="text-center">CEO, The Meta Softech Pvt Ltd.</p></span>
                                     </div>
                                     <div class="about-info">
                                         <p>Call to ask any question </p>
@@ -374,8 +388,8 @@
                                         <span>Years of <br> experience</span>
                                     </div>
                                     <div class="experience-text">
-                                        <p>Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible freelance talent for all your software development needs.</p>
-                                        <a class="learn-more" href="#">learn More About Us <i class="fas fa-long-arrow-alt-right"></i></a></a>
+                                        <p>We focus on your success by offering cutting-edge IT solutions that enhance efficiency, innovation, and business growth..</p>
+                                        <!-- <a class="learn-more" href="#">learn More About Us <i class="fas fa-long-arrow-alt-right"></i></a> -->
                                     </div>
                                 </div>
                             </div>
@@ -524,14 +538,14 @@
                                 <div class="swiper-slide">
                                     <!--  Single Testimonial Start  -->
                                     <div class="single-testimonial-02">
-                                        <div class="testimonial-thumb">
+                                        <!-- <div class="testimonial-thumb">
                                             <img src="assets/images/testi-3.jpg" alt="">
-                                        </div>
+                                        </div> -->
                                         <div class="testimonial-content">
                                             <img src="assets/images/testi-icon.png" alt="">
-                                            <p>Accelerate innovation with world-class tech teams Beyond more stoic this along goodness hey this this wow manatee </p>
-                                            <span class="name">Mike Holder </span>
-                                            <span class="designation"> / CEO, Harlond inc</span>
+                                            <p>Impressive IT services. The team is professional, skilled, and delivered on time, improving our system's security and performance.</p>
+                                            <span class="name">Shashank Tripathi </span>
+                                            <span class="designation"></span>
                                         </div>
                                     </div>
                                     <!--  Single Testimonial End  -->
@@ -539,14 +553,14 @@
                                 <div class="swiper-slide">
                                     <!--  Single Testimonial Start  -->
                                     <div class="single-testimonial-02">
-                                        <div class="testimonial-thumb">
+                                        <!-- <div class="testimonial-thumb">
                                             <img src="assets/images/testi-4.jpg" alt="">
-                                        </div>
+                                        </div> -->
                                         <div class="testimonial-content">
                                             <img src="assets/images/testi-icon.png" alt="">
-                                            <p>Accelerate innovation with world-class tech teams Beyond more stoic this along goodness hey this this wow manatee </p>
-                                            <span class="name">Mike Fermalin </span>
-                                            <span class="designation"> / CEO, Harlond inc</span>
+                                            <p>Outstanding IT company with knowledgeable team. Delivered reliable, efficient solutions on time, greatly enhancing our business operations. Highly recommend! </p>
+                                            <span class="name">Ajeet Kumar Pandey </span>
+                                            <span class="designation"> </span>
                                         </div>
                                     </div>
                                     <!--  Single Testimonial End  -->
@@ -554,14 +568,14 @@
                                 <div class="swiper-slide">
                                     <!--  Single Testimonial Start  -->
                                     <div class="single-testimonial-02">
-                                        <div class="testimonial-thumb">
+                                        <!-- <div class="testimonial-thumb">
                                             <img src="assets/images/testi-3.jpg" alt="">
-                                        </div>
+                                        </div> -->
                                         <div class="testimonial-content">
                                             <img src="assets/images/testi-icon.png" alt="">
-                                            <p>Accelerate innovation with world-class tech teams Beyond more stoic this along goodness hey this this wow manatee </p>
-                                            <span class="name">Mike Holder </span>
-                                            <span class="designation"> / CEO, Harlond inc</span>
+                                            <p>Excellent IT company! Provided innovative solutions, responsive support, and seamless project delivery. Boosted our business efficiency significantly.</p>
+                                            <span class="name">Anirudh Narayan </span>
+                                            <span class="designation"> </span>
                                         </div>
                                     </div>
                                     <!--  Single Testimonial End  -->
@@ -739,19 +753,19 @@
         <!-- Team End -->
 
         <!-- Blog Start -->
-        <div class="section techwix-blog-section section-padding-02">
-            <div class="container">
+        <!-- <div class="section techwix-blog-section section-padding-02">
+            <div class="container"> -->
                 <!-- Section Title Start -->
-                <div class="section-title text-center">
+                <!-- <div class="section-title text-center">
                     <h4 class="sub-title">latest Blog</h4>
                     <h2 class="title">From the news room</h2>
-                </div>
+                </div> -->
                 <!-- Section Title End -->
-                <div class="techwix-blog-wrap">
+                <!-- <div class="techwix-blog-wrap">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6">
+                        <div class="col-lg-4 col-md-6"> -->
                             <!-- Single Blog Start -->
-                            <div class="single-blog">
+                            <!-- <div class="single-blog">
                                 <div class="blog-image">
                                     <a href="blog-details.php"><img src="assets/images/blog/blog-1.jpg" alt=""></a>
                                     <div class="top-meta">
@@ -768,12 +782,12 @@
                                         <a class="blog-btn-link" href="blog-details.php">Read Full <i class="fas fa-long-arrow-alt-right"></i></a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- Single Blog End -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
+                        <!-- </div>
+                        <div class="col-lg-4 col-md-6"> -->
                             <!-- Single Blog Start -->
-                            <div class="single-blog">
+                            <!-- <div class="single-blog">
                                 <div class="blog-image">
                                     <a href="blog-details.php"><img src="assets/images/blog/blog-2.jpg" alt=""></a>
                                     <div class="top-meta">
@@ -790,12 +804,12 @@
                                         <a class="blog-btn-link" href="blog-details .php">Read Full <i class="fas fa-long-arrow-alt-right"></i></a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- Single Blog End -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
+                        <!-- </div>
+                        <div class="col-lg-4 col-md-6"> -->
                             <!-- Single Blog Start -->
-                            <div class="single-blog">
+                            <!-- <div class="single-blog">
                                 <div class="blog-image">
                                     <a href="blog-details.php"><img src="assets/images/blog/blog-3.jpg" alt=""></a>
                                     <div class="top-meta">
@@ -812,13 +826,13 @@
                                         <a class="blog-btn-link" href="blog-details .php">Read Full <i class="fas fa-long-arrow-alt-right"></i></a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- Single Blog End -->
-                        </div>
+                        <!-- </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Blog End -->
       
           <!-- footer Start -->
@@ -836,7 +850,66 @@
         <!-- back to top end -->
 
     </div>
+<script>
+//     document.addEventListener('DOMContentLoaded', function () {
+//     const toggleLinks = document.querySelectorAll('.toggle-description');
 
+//     toggleLinks.forEach(link => {
+//         link.addEventListener('click', function (e) {
+//             e.preventDefault();
+
+//             const shortDescription = this.closest('.service-content').querySelector('.short-description');
+//             const fullDescription = this.closest('.service-content').querySelector('.full-description');
+            
+//             if (fullDescription.style.display === 'none' || fullDescription.style.display === '') {
+//                 fullDescription.style.display = 'block';
+//                 shortDescription.style.display = 'none';
+//                 this.innerHTML = '<i class="fas fa-minus"></i> Read Less';
+//             } else {
+//                 fullDescription.style.display = 'none';
+//                 shortDescription.style.display = 'block';
+//                 this.innerHTML = '<i class="fas fa-plus"></i> Read More';
+//             }
+//         });
+//     });
+// });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleLinks = document.querySelectorAll('.toggle-description');
+
+    toggleLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Get the service-content element of the clicked link
+            const serviceContent = this.closest('.service-content');
+            const shortDescription = serviceContent.querySelector('.short-description');
+            const fullDescription = serviceContent.querySelector('.full-description');
+
+            // Close all other expanded sections
+            document.querySelectorAll('.service-content').forEach(content => {
+                if (content !== serviceContent) {
+                    content.querySelector('.full-description').style.display = 'none';
+                    content.querySelector('.short-description').style.display = 'block';
+                    content.querySelector('.toggle-description').innerHTML = '<i class="fas fa-plus"></i> Read More';
+                }
+            });
+
+            // Toggle the clicked section
+            if (fullDescription.style.display === 'none' || fullDescription.style.display === '') {
+                fullDescription.style.display = 'block';
+                shortDescription.style.display = 'none';
+                this.innerHTML = '<i class="fas fa-minus"></i> Read Less';
+            } else {
+                fullDescription.style.display = 'none';
+                shortDescription.style.display = 'block';
+                this.innerHTML = '<i class="fas fa-plus"></i> Read More';
+            }
+        });
+    });
+});
+</script>
     <!-- JS
     ============================================ -->
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
