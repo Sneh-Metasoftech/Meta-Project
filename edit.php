@@ -82,33 +82,7 @@
          include("header.php");
          ?>
  <!-- Header End  -->
- <?php 
-  if(isset($_POST['submit'])){
-
-    $namee=$_POST['name'];
-    $categ=$_POST['category'];
-    date_default_timezone_set("Asia/Kolkata");
-    $creadted=date("Y-m-d H:i:s"); 
-    $insert="insert into categories (name,slug,created_at) value ('$namee','$categ','$creadted')";
-    $query=mysqli_query($db,$insert);
-    if($query){
-        echo "<script>
-                location.href='blogs.php';
-        </script>";
-       
-    }
-    else{
-        echo 'not inserted';
-    }
-
-    // echo '<pre>';
-    // print_r($_POST);
-    // echo '</pre>';
-    // die;
-  
-  }
-?>
-
+ 
         <!-- Page Banner Start -->
         <div class="section page-banner-section" style="background-image: url(assets/images/web.jpeg);">
             <div class="shape-1">
@@ -153,10 +127,10 @@
                         <div class="col-lg-12">
                             <!-- Page Banner Content Start -->
                             <div class="page-banner text-center">
-                                <h2 class="title">Category</h2>
+                                <h2 class="title">Edit Page</h2>
                                 <ul class="breadcrumb justify-content-center">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Category</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Edit</li>
                                 </ul>
                             </div>
                             <!-- Page Banner Content End -->
@@ -167,102 +141,124 @@
         </div>
         <!-- Page Banner End -->
 <br><br><br><br>
+
+
 <?php
-            $edite=$_GET['edit'];
-            $select="select * from post where id='$edite'";
-            $query=mysqli_query($db, $select);
-            if($row=mysqli_fetch_array($query)){
-              // echo '<pre>';
-              // print_r($row);
-              // echo '</pre>';
-              // die;
-           
-        ?>
-        <!-- update query -->
-       
-        <?php
-          if(isset($_POST['update'])){
-              $title = $_POST['title'];
-              $slug = $_POST['slug'];
-              $txt =mysqli_real_escape_string($db,$_POST['text']);
-              $author = $_POST['author'];
-              $cate = $_POST['category'];
-              $img = $_FILES['image'] ['name'];
-              $img_tmp = $_FILES['image'] ['tmp_name'];
-              date_default_timezone_set("Asia/Kolkata");
-              $updated=date("Y-m-d H:i:s");
-              $update="update post set title='$title',slug='$slug',content='$txt',category_id='$cate',featured_image='$img',update_at='$updated' where id=$edite";
+  $edite=$_GET['edit'];
+  $select="select * from post where id='$edite'";
+  $query=mysqli_query($db, $select);
+  if($row=mysqli_fetch_array($query)){
+?>
+
+<?php
+if (isset($_POST['update'])) {
+    $title = $_POST['title'];
+    $slug = $_POST['slug'];
+    $txt = mysqli_real_escape_string($db, $_POST['text']);
+    $author = $_POST['author'];
+    $cate = $_POST['category'];
+    $img = $_FILES['image']['name'];
+    $img_tmp = $_FILES['image']['tmp_name'];
+    date_default_timezone_set("Asia/Kolkata");
+    $updated = date("Y-m-d H:i:s");
+
+    // Check if the image is uploaded
+    if (!empty($img)) {
+        // If new image is uploaded, move it to the blog folder
+        move_uploaded_file($img_tmp, "blog/" . $img);
+        $update = "UPDATE post SET title='$title', slug='$slug', content='$txt', category_id='$cate', featured_image='$img', update_at='$updated' WHERE id=$edite";
+    } else {
+        // If no new image is uploaded, keep the old image
+        $update = "UPDATE post SET title='$title', slug='$slug', content='$txt', category_id='$cate', update_at='$updated' WHERE id=$edite";
+    }
+
+    $query = mysqli_query($db, $update);
+
+    if ($query) {
+        echo '<script>
+               Swal.fire({
+                    title: "Success!",
+                    text: "Your blog was updated successfully.",
+                    icon: "success",
+                    showConfirmButton: true,
+                    
+                    });
                
-              $query= mysqli_query($db,$update);
-    if($query){
-        move_uploaded_file("$img_tmp","blog/".$img);
-        echo 'your blog inserted successfully';
+            </script>';
+    } else {
+        echo '<script>
+             
+            Swal.fire({
+            title: "Failed!",
+            text: "Blog update failed!",
+            icon: "error",
+            showConfirmButton: true,
+            
+            });
+           
+       </script>';
     }
-    else{
-        echo 'your blog inserted failed..!';
-    }
-          }
-        ?>
+}
+?>
+
 
 <section>
-<div class="container">
-                <h2 class="text-center">Blog Section</h2>
-            <div class="container-6  mtt mtl">
-                  <h3 class="text-center">Update your Blog</h3>
-                <form  action="#"  method="post" enctype="multipart/form-data" class="p-1 " style="box-shadow: 0px 4px 7px 1px;border-radius: 10px; padding:15px!important;">
-                <h3 style="color:red; background-color:yellow;margin:0;padding:0;text-align:center;">Welcome Admin  <?php echo($_SESSION['username'])?></h3>
-                <div class="mb-3" style="margin-top: 10px;">
-                    <!-- <label for="exampleFormControlInput1" class="form-label">Name:</label> -->
-                    <input type="text" class="form-control" value="<?php echo $row['title']?>" name="title" placeholder="Enter the Blog Title">
-                </div>
+  <div class="container">
+    <h2 class="text-center">Blog Section</h2>
+    <div class="container-6 mtt mtl">
+      <h3 class="text-center">Update your Blog</h3>
+      <form action="" method="post" enctype="multipart/form-data" class="p-1" style="box-shadow: 0px 4px 7px 1px; border-radius: 10px; padding: 15px!important;">
+        <h3 style="color:red; background-color:yellow;margin:0;padding:0;text-align:center;">Welcome Admin <?php echo($_SESSION['username'])?></h3>
 
-                <div class="mb-3">
-                    <!-- <label for="exampleFormControlInput1" class="form-label">Category:</label> -->
-                    <input type="text" class="form-control" name="slug" value="<?php echo $row['slug']?>" placeholder="Enter the Blog Slug">
-                </div>    
+        <div class="mb-3" style="margin-top: 10px;">
+          <input type="text" class="form-control" value="<?php echo $row['title']?>" name="title" placeholder="Enter the Blog Title">
+        </div>
 
-                <div class="mb-3">
-                    <!-- <label for="exampleFormControlInput1" class="form-label">Category:</label> -->
-                    <textarea class="form-control"  name="text" aria-label="With textarea"value="<?php echo $row['content']?>" placeholder="Enter the Blog Text-Content"></textarea>
-                </div> 
-              
-                <div class="mb-3">
-                    <!-- <label for="exampleFormControlInput1" class="form-label">Category:</label> -->
-                    <input type="text" class="form-control" name="author" value="<?php echo($_SESSION['username'])?>" placeholder="Enter the Blog Author Id" readonly>
-                </div>  
+        <div class="mb-3">
+          <input type="text" class="form-control" name="slug" value="<?php echo $row['slug']?>" placeholder="Enter the Blog Slug">
+        </div>    
 
-                <div class="mb-3">
-                    
-              
-                <select class="form-select" name="category" value="<?php echo $row['category']?>" aria-label="Default select example">
-                        <option selected>Select the blog Category</option>
-                        <option value="event">Event</option>
-                            <option value="technology">Technology</option>
-                            <option value="inovation">Innovation</option>
-                            <option value="learning">Learning</option>
-                            <option value="information">Information</option>
-</select>
-                </div>  
+        <div class="mb-3">
+          <textarea class="form-control" name="text" aria-label="With textarea" placeholder="Enter the Blog Text-Content"><?php echo $row['content']?></textarea>
+        </div> 
+      
+        <div class="mb-3">
+          <input type="text" class="form-control" name="author" value="<?php echo($_SESSION['username'])?>" placeholder="Enter the Blog Author Id" readonly>
+        </div>  
 
-                
+        <div class="mb-3">
+          <select class="form-select" name="category" aria-label="Default select example">
+            <option selected>Select the blog Category</option>
+            <option value="event" <?php if($row['category_id'] == 'event') echo 'selected'; ?>>Event</option>
+            <option value="technology" <?php if($row['category_id'] == 'technology') echo 'selected'; ?>>Technology</option>
+            <option value="inovation" <?php if($row['category_id'] == 'inovation') echo 'selected'; ?>>Innovation</option>
+            <option value="learning" <?php if($row['category_id'] == 'learning') echo 'selected'; ?>>Learning</option>
+            <option value="information" <?php if($row['category_id'] == 'information') echo 'selected'; ?>>Information</option>
+          </select>
+        </div>  
 
-                <div class="mb-3">
-                    <!-- <label for="exampleFormControlInput1" class="form-label">Category:</label> -->
-                    <input type="file" class="form-control" name="image" value="<?php echo $row['featured_image']?>" placeholder="Enter the Blog featured image">
-                </div> 
+        <div class="mb-3">
+    <label for="currentImage" class="form-label">Current Featured Image:</label><br>
+    <img src="blog/<?php echo $row['featured_image']; ?>" alt="Current Image" style="width: 150px;">
+</div>
 
-              
+<div class="mb-3">
+    <label for="newImage" class="form-label">Upload New Image:</label>
+    <input type="file" class="form-control" name="image" placeholder="Enter the Blog featured image">
+</div>
 
-                <div class="text-center">
-                    <button type="submit" name="update" class="btn btn-success">Update</button>
-                    <button name="danger" class="btn btn-success"><a href="dashboard.php">Dashboard</a></button>
-                    <button name="submit" class="btn btn-danger"><a href="logout.php">Logout </a></button>
-                 </div>
-                 <?php }?>
-                </form>
-            </div>
-            </div>
-               
+        <div class="text-center">
+          <button type="submit" name="update" class="btn btn-success">Update</button>
+          <button class="btn btn-success"><a href="dashboard.php">Dashboard</a></button>
+          <button class="btn btn-danger"><a href="logout.php">Logout </a></button>
+        </div>
+
+      </form>
+    </div> 
+  </div>
+</section>
+<?php } ?>
+
 </section>
 
         <?php

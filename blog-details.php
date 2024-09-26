@@ -1,3 +1,7 @@
+<?php
+ include("db.php");
+?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -109,24 +113,31 @@
                 <!-- Blog Details Wrap Start -->
                 <div class="blog-details-wrap">
                     <div class="row">
+                    <?php
+                
+                $selQB = "SELECT * FROM `post` order by id desc";
+                $resQB = mysqli_query($db,$selQB);
+                if(mysqli_num_rows($resQB)>0){
+                    while($row = mysqli_fetch_assoc($resQB)){
+                ?>
                         <div class="col-xl-8 col-lg-8">
                             <!-- Blog Details Post Start -->
                             <div class="blog-details-post">
                                 <!-- Single Blog Start -->
                                 <div class="single-blog-post single-blog">
                                     <div class="blog-image">
-                                        <a href="blog-details.php"><img src="assets/images/blog/blog-s-1.jpg" alt=""></a>
+                                        <a href="blog-details.php"><img src="blog/<?php echo $row['featured_image'];?>"alt=""></a>
                                         <div class="top-meta">
-                                            <span class="date"><span>08</span>Aug</span>
+                                            <span class="date"><h3 style="color:white;"><?php echo date(' j ', strtotime($row['create_at'])); ?></h3></span>
                                         </div>
                                     </div>
                                     <div class="blog-content">
                                         <div class="blog-meta">
-                                            <span class="tag"><i class="far fa-bookmark"></i> Technology / Business</span>
-                                            <span><i class="fas fa-user"></i> <a href="#">Andrew Paker</a></span>
+                                            <span class="tag"><i class="far fa-bookmark"></i> <a href="#"><?php echo $row['category_id'];?></span>
+                                            <span><i class="fas fa-user"></i> <a href="#"><?php echo $row['author_id'];?></span>
                                             <span><i class="far fa-comments"></i> 0 Comments</span>
                                         </div>
-                                        <h3 class="title">How to become a successful businessman</h3>
+                                        <h3 class="title"><a href="#"><?php echo $row['slug'];?></h3>
                                         <p class="text">Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible freelance talent for all your software development needs. It’s been said a million times before, if not more, but technology has revolutionised our lives in ways we never expected. From the home to the office.</p>
                                     </div>
                                 </div>
@@ -135,7 +146,7 @@
                                     <!-- Blog Blockquote Start -->
                                     <div class="blog-quote">
                                         <blockquote class="blockquote">
-                                            <p>Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible freelance talent for all your software development needs. there’s no corner of our day-to-day lives that hasn’t been.</p>
+                                            <p><a href="#"><?php echo $row['title'];?>.</p>
                                         </blockquote>
                                     </div>
                                     <!-- Blog Blockquote End -->
@@ -310,14 +321,7 @@
                                 </div>
                                 <!-- Sidebar Widget End -->
 
-                                <div class="sidebar-widget">
-                                    <div class="widget-banner" style="background-image: url(assets/images/blog/sidebar-img.jpg);">
-                                        <div class="banner-content">
-                                            <h4 class="title">The leading platform</h4>
-                                            <a class="btn" href="contact.php">Get Started</a>
-                                        </div>
-                                    </div>
-                                </div>
+                              
 
                                 <!-- Sidebar Widget Start -->
                                 <div class="sidebar-widget">
@@ -359,6 +363,13 @@
                             </div>
                             <!-- Blog Sidebar End -->
                         </div>
+                        <?php
+                    }
+                }
+                
+                
+                
+                ?>
                     </div>
                 </div>
                 <!-- Blog Details Wrap End -->

@@ -1,3 +1,7 @@
+<?php
+ include("db.php");
+?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -111,21 +115,28 @@
             <div class="container">
                 <div class="techwix-blog-grid-wrap">
                     <div class="row">
+                    <?php
+                
+                $selQB = "SELECT * FROM `post` order by id desc";
+                $resQB = mysqli_query($db,$selQB);
+                if(mysqli_num_rows($resQB)>0){
+                    while($row = mysqli_fetch_assoc($resQB)){
+                ?>
                         <div class="col-lg-4 col-md-6">
                             <!-- Single Blog Start -->
                             <div class="single-blog">
                                 <div class="blog-image">
-                                    <a href="blog-details.php"><img src="assets/images/blog/blog-1.jpg" alt=""></a>
+                                    <a href="blog-details.php"><img src="blog/<?php echo $row['featured_image'];?>" alt=""></a>
                                     <div class="top-meta">
-                                        <span class="date"><span>08</span>Aug</span>
+                                        <span class="date"><h3 style="color:white;"><?php echo date(' j ', strtotime($row['create_at'])); ?></h3></span>
                                     </div>
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-meta">
-                                        <span><i class="fas fa-user"></i> <a href="#">Andrew Paker</a></span>
+                                        <span><i class="fas fa-user"></i> <a href="#"><?php echo $row['author_id'];?></a></span>
                                         <span><i class="far fa-comments"></i> 0 Comments</span>
                                     </div>
-                                    <h3 class="title"><a href="blog-details.php">How to become a successful businessman </a></h3>
+                                    <h3 class="title"><a href="blog-details.php"><?php echo $row['slug'];?> </a></h3>
                                     <div class="blog-btn">
                                         <a class="blog-btn-link" href="blog-details.php">Read Full <i class="fas fa-long-arrow-alt-right"></i></a>
                                     </div>
@@ -133,182 +144,17 @@
                             </div>
                             <!-- Single Blog End -->
                         </div>
-                        <div class="col-lg-4 col-md-6">
-                            <!-- Single Blog Start -->
-                            <div class="single-blog">
-                                <div class="blog-image">
-                                    <a href="blog-details.php"><img src="assets/images/blog/blog-2.jpg" alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><span>10</span>Aug</span>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <span><i class="fas fa-user"></i> <a href="#">Andrew Paker</a></span>
-                                        <span><i class="far fa-comments"></i> 0 Comments</span>
-                                    </div>
-                                    <h3 class="title"><a href="blog-details.php">Who Needs Extract Value From Data? </a></h3>
-                                    <div class="blog-btn">
-                                        <a class="blog-btn-link" href="blog-details.php">Read Full <i class="fas fa-long-arrow-alt-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Blog End -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <!-- Single Blog Start -->
-                            <div class="single-blog">
-                                <div class="blog-image">
-                                    <a href="blog-details.php"><img src="assets/images/blog/blog-3.jpg" alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><span>12</span>Aug</span>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <span><i class="fas fa-user"></i> <a href="#">Andrew Paker</a></span>
-                                        <span><i class="far fa-comments"></i> 0 Comments</span>
-                                    </div>
-                                    <h3 class="title"><a href="blog-details.php">Easy and Most Powerful Server and Platform.</a></h3>
-                                    <div class="blog-btn">
-                                        <a class="blog-btn-link" href="blog-details.php">Read Full <i class="fas fa-long-arrow-alt-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Blog End -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <!-- Single Blog Start -->
-                            <div class="single-blog">
-                                <div class="blog-image">
-                                    <a href="blog-details.php"><img src="assets/images/blog/blog-5.jpg" alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><span>10</span>Aug</span>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <span><i class="fas fa-user"></i> <a href="#">Andrew Paker</a></span>
-                                        <span><i class="far fa-comments"></i> 0 Comments</span>
-                                    </div>
-                                    <h3 class="title"><a href="blog-details.php">Who Needs Extract Value From Data? </a></h3>
-                                    <div class="blog-btn">
-                                        <a class="blog-btn-link" href="blog-details.php">Read Full <i class="fas fa-long-arrow-alt-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Blog End -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <!-- Single Blog Start -->
-                            <div class="single-blog">
-                                <div class="blog-image">
-                                    <a href="blog-details.php"><img src="assets/images/blog/blog-6.jpg" alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><span>12</span>Aug</span>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <span><i class="fas fa-user"></i> <a href="#">Andrew Paker</a></span>
-                                        <span><i class="far fa-comments"></i> 0 Comments</span>
-                                    </div>
-                                    <h3 class="title"><a href="blog-details.php">Easy and Most Powerful Server and Platform.</a></h3>
-                                    <div class="blog-btn">
-                                        <a class="blog-btn-link" href="blog-details.php">Read Full <i class="fas fa-long-arrow-alt-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Blog End -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <!-- Single Blog Start -->
-                            <div class="single-blog">
-                                <div class="blog-image">
-                                    <a href="blog-details.php"><img src="assets/images/blog/blog-4.jpg" alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><span>08</span>Aug</span>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <span><i class="fas fa-user"></i> <a href="#">Andrew Paker</a></span>
-                                        <span><i class="far fa-comments"></i> 0 Comments</span>
-                                    </div>
-                                    <h3 class="title"><a href="blog-details.php">How to become a successful businessman </a></h3>
-                                    <div class="blog-btn">
-                                        <a class="blog-btn-link" href="blog-details.php">Read Full <i class="fas fa-long-arrow-alt-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Blog End -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <!-- Single Blog Start -->
-                            <div class="single-blog">
-                                <div class="blog-image">
-                                    <a href="blog-details.php"><img src="assets/images/blog/blog-7.jpg" alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><span>08</span>Aug</span>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <span><i class="fas fa-user"></i> <a href="#">Andrew Paker</a></span>
-                                        <span><i class="far fa-comments"></i> 0 Comments</span>
-                                    </div>
-                                    <h3 class="title"><a href="blog-details.php">How to become a successful businessman </a></h3>
-                                    <div class="blog-btn">
-                                        <a class="blog-btn-link" href="blog-details.php">Read Full <i class="fas fa-long-arrow-alt-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Blog End -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <!-- Single Blog Start -->
-                            <div class="single-blog">
-                                <div class="blog-image">
-                                    <a href="blog-details.php"><img src="assets/images/blog/blog-8.jpg" alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><span>10</span>Aug</span>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <span><i class="fas fa-user"></i> <a href="#">Andrew Paker</a></span>
-                                        <span><i class="far fa-comments"></i> 0 Comments</span>
-                                    </div>
-                                    <h3 class="title"><a href="blog-details.php">Who Needs Extract Value From Data? </a></h3>
-                                    <div class="blog-btn">
-                                        <a class="blog-btn-link" href="blog-details.php">Read Full <i class="fas fa-long-arrow-alt-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Blog End -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <!-- Single Blog Start -->
-                            <div class="single-blog">
-                                <div class="blog-image">
-                                    <a href="blog-details.php"><img src="assets/images/blog/blog-9.jpg" alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><span>12</span>Aug</span>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <span><i class="fas fa-user"></i> <a href="#">Andrew Paker</a></span>
-                                        <span><i class="far fa-comments"></i> 0 Comments</span>
-                                    </div>
-                                    <h3 class="title"><a href="blog-details.php">Easy and Most Powerful Server and Platform.</a></h3>
-                                    <div class="blog-btn">
-                                        <a class="blog-btn-link" href="blog-details.php">Read Full <i class="fas fa-long-arrow-alt-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Blog End -->
-                        </div>
+                       
+                        
+                        
+                        <?php
+                    }
+                }
+                
+                
+                
+                ?>
+                        
                     </div>
                     <!-- Page Pagination Start -->
                     <div class="techwix-pagination">
