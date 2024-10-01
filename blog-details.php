@@ -114,11 +114,15 @@
                 <div class="blog-details-wrap">
                     <div class="row">
                     <?php
-                
-                $selQB = "SELECT * FROM `post` order by id desc";
-                $resQB = mysqli_query($db,$selQB);
-                if(mysqli_num_rows($resQB)>0){
-                    while($row = mysqli_fetch_assoc($resQB)){
+                if (isset($_GET['id'])) {
+                    $post_id = $_GET['id'];
+                    
+                    // Fetch the specific post using the id from URL
+                    $selQB = "SELECT * FROM `post` WHERE id = $post_id";
+                    $resQB = mysqli_query($db, $selQB);
+                    
+                    if (mysqli_num_rows($resQB) > 0) {
+                        $row = mysqli_fetch_assoc($resQB);
                 ?>
                         <div class="col-xl-8 col-lg-8">
                             <!-- Blog Details Post Start -->
@@ -126,38 +130,39 @@
                                 <!-- Single Blog Start -->
                                 <div class="single-blog-post single-blog">
                                     <div class="blog-image">
+                                    <a href="blog-details.php?id=<?php echo $row['id']; ?>"></a>
                                         <a href="blog-details.php"><img src="blog/<?php echo $row['featured_image'];?>"alt=""></a>
                                         <div class="top-meta">
-                                            <span class="date"><h3 style="color:white;"><?php echo date(' j ', strtotime($row['create_at'])); ?></h3></span>
+                                            <span class="date"><h2 style="color:white;"><?php echo date(' j', strtotime($row['create_at'])); ?></h2></span>
                                         </div>
                                     </div>
                                     <div class="blog-content">
                                         <div class="blog-meta">
-                                            <span class="tag"><i class="far fa-bookmark"></i> <a href="#"><?php echo $row['category_id'];?></span>
-                                            <span><i class="fas fa-user"></i> <a href="#"><?php echo $row['author_id'];?></span>
-                                            <span><i class="far fa-comments"></i> 0 Comments</span>
+                                            <span class="tag"><i class="far fa-bookmark"></i> <?php echo $row['category_id'];?></span>
+                                            <span><i class="fas fa-user"></i> <?php echo $row['author_id'];?></span>
+                                            <!-- <span><i class="far fa-comments"></i> 0 Comments</span> -->
                                         </div>
-                                        <h3 class="title"><a href="#"><?php echo $row['slug'];?></h3>
-                                        <p class="text">Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible freelance talent for all your software development needs. It’s been said a million times before, if not more, but technology has revolutionised our lives in ways we never expected. From the home to the office.</p>
+                                        <h3 class="title"><?php echo $row['title'];?></h3>
+                                        
                                     </div>
                                 </div>
                                 <!-- Single Blog End -->
-                                <div class="blog-details-content">
+                                <div class="blog-details-content" style="margin-left: -45px;">
                                     <!-- Blog Blockquote Start -->
                                     <div class="blog-quote">
                                         <blockquote class="blockquote">
-                                            <p><a href="#"><?php echo $row['title'];?>.</p>
+                                            <p><?php echo $row['slug'];?></p>
                                         </blockquote>
                                     </div>
                                     <!-- Blog Blockquote End -->
                                     <!-- Blog Details Text Start -->
-                                    <div class="blog-details-text">
-                                        <p>Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible freelance talent for all your software development needs. specializes in technological and IT-related services such as product engineering, warranty management, building cloud, infrastructure, network, etc. </p>
-                                    </div>
+                                    <div class="blog-details-text"
+                                    style="color:black; cursor: auto;margin-left:50px;"> <p><?php echo $row
+                                    ['content'];?></p> </div>
                                     <!-- Blog Details Text End -->
                                     <!-- Blog Details Tag Share Start -->
                                     <div class="blog-details-tag-share">
-                                        <div class="blog-details-tag">
+                                        <!-- <div class="blog-details-tag">
                                             <div class="sidebar-widget">
                                                 <span class="label">Tags :</span>
                                                 <ul class="sidebar-tag">
@@ -166,7 +171,7 @@
                                                     <li><a href="#">Courses</a></li>
                                                 </ul>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="blog-details-share">
                                             <ul class="social-share">
                                                 <li><a class="share-facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -176,38 +181,8 @@
                                         </div>
                                     </div>
                                     <!-- Blog Details Tag Share End -->
-                                    <!-- Blog Details Post Navigation Start -->
-                                    <div class="techwix-post-pagination">
-                                        <div class="previous-post">
-                                            <div class="blog-pagination-post">
-                                                <div class="post-thumb">
-                                                    <a href="#">
-                                                        <i class="flaticon-back"></i>
-                                                        <img src="assets/images/blog/p-post-1.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="post-content">
-                                                    <h4 class="title"><a href="#">How Wireless Technology is Changing Business</a></h4>
-                                                    <span class="date"><i class="far fa-calendar-alt"></i> May 15, 2020</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="next-post">
-                                            <div class="blog-pagination-post">
-                                                <div class="post-content text-end">
-                                                    <h4 class="title"><a href="#">How Wireless Technology is Changing Business</a></h4>
-                                                    <span class="date"><i class="far fa-calendar-alt"></i> May 15, 2020</span>
-                                                </div>
-                                                <div class="post-thumb">
-                                                    <a href="#">
-                                                        <img src="assets/images/blog/p-post-2.jpg" alt="">
-                                                        <i class="flaticon-next"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Blog Details Post Navigation End -->
+                                    
+                           
                                     <!-- Commtent Wrap Start -->
                                     <div class="comment-wrap">
                                         <!-- Commtent Form Start -->
@@ -264,10 +239,11 @@
                                 <!-- Sidebar Widget Start -->
                                 <div class="sidebar-widget sidebar-widget-1">
                                     <!-- Widget Search Form Start -->
-                                    <form class="search-form" action="#">
-                                        <input type="text" placeholder="Write your keyword...">
+                                    <form class="search-form" action="search.php" method="GET">
+                                        <input type="text" name="query" placeholder="Enter date, title, or keyword...">
                                         <button type="submit"><i class="fas fa-search"></i></button>
                                     </form>
+
                                     <!-- Widget Search Form End -->
                                 </div>
                                 <!-- Sidebar Widget End -->
@@ -344,19 +320,19 @@
                                 <!-- Sidebar Widget Start -->
                                 <div class="sidebar-widget">
                                     <!-- Widget Title Start -->
-                                    <div class="widget-title">
+                                    <!-- <div class="widget-title">
                                         <h3 class="title">Tags</h3>
-                                    </div>
+                                    </div> -->
                                     <!-- Widget Title End -->
                                     <!-- Widget Category Start -->
-                                    <ul class="sidebar-tag">
+                                    <!-- <ul class="sidebar-tag">
                                         <li><a href="#">Learning</a></li>
                                         <li><a href="#">Course</a></li>
                                         <li><a href="#">Business</a></li>
                                         <li><a href="#">Udemy</a></li>
                                         <li><a href="#">Online</a></li>
                                         <li><a href="#">Technology</a></li>
-                                    </ul>
+                                    </ul> -->
                                     <!-- Widget Category End -->
                                 </div>
                                 <!-- Sidebar Widget End -->
@@ -364,11 +340,10 @@
                             <!-- Blog Sidebar End -->
                         </div>
                         <?php
+                        } else {
+                            echo "<p>Blog post not found.</p>";
+                        }
                     }
-                }
-                
-                
-                
                 ?>
                     </div>
                 </div>

@@ -137,7 +137,7 @@ a, button {
   display: inline-block;
   line-height: inherit;
   text-decoration: none;
-  cursor: pointer;
+  cursor: auto;
 }
 
 a, button, img, input {
@@ -829,6 +829,10 @@ textarea:-ms-input-placeholder {
   display: block;
   position: relative;
   z-index: 1;
+ cursor: auto!important;
+}
+.header-menu .main-menu li .sub-menu li a {
+   cursor: auto!important;
 }
 
 .header-menu .main-menu li .sub-menu li.active > a {
@@ -8343,6 +8347,7 @@ textarea:-ms-input-placeholder {
   bottom: 0px;
   transform: translateX(0);
   margin-top: 0px;
+  text-transform: capitalize;
 }
 
 .blog-details-post .single-blog-post.single-blog .blog-content .blog-meta .tag {
@@ -8366,8 +8371,8 @@ textarea:-ms-input-placeholder {
 .blog-details-post .blog-details-content .blog-quote {
   background-color: none;
   position: relative;
-  margin-left: 50px;
-  margin-top: 40px;
+  /* margin-left: 0px;
+  margin-top: 0px; */
 }
 
 .blog-details-post .blog-details-content .blog-quote::after {
@@ -8428,6 +8433,7 @@ textarea:-ms-input-placeholder {
   font-size: 16px;
   line-height: 30px;
   margin-top: 50px;
+  color: black;
 }
 
 .blog-details-post .blog-details-content .blog-details-tag-share {

@@ -35,18 +35,61 @@
     <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
     <!-- <link rel="stylesheet" href="assets/css/vendor/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css"> -->
-<style>
 
-</style>
 </head>
+<style>
+        /* Preloader container styling */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
 
+        /* Shrinking circle animation */
+        .shrink-circle {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            border-radius: 50%;
+            animation: shrink 1.5s infinite ease-in-out;
+        }
+
+        /* Animation keyframes */
+        @keyframes shrink {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .fot{
+                box-shadow: 0px 6px 27px 7px rgb(8 106 216)!important;
+                width: 70%;
+                padding: 4px 10px;
+                margin-left: 188px!important;
+        }
+        @media only screen and (max-width: 991px) {
+            .fot{
+                width: 81%;
+                margin-left: 50px!important;
+            }
+        }
+    </style>
 <body>
-    <div id="preloader">
-    <div class="preloader">
-        <span></span>
-        <span></span>
+<div id="preloader">
+        <div class="shrink-circle"></div>
     </div>
-</div>
 <!-- Preloader End -->
 
     <div class="main-wrapper">
@@ -179,7 +222,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-10">
                             <!-- Contact Form Start -->
-                            <div class="contact-form">
+                            <div class="contact-form fot">
                                 <div class="contact-form-wrap">
                                     <div class="heading-wrap text-center">
                                         <span class="sub-title"> request a quote</span>
@@ -250,9 +293,11 @@
             </div>
         </div>
         <!-- Contact End -->
+<br><br><br>
+
 
         <!-- Contact Map Start -->
-        <div class="section contact-map-section">
+        <div class="section contact-map-section" style="margin-top: 100px;">
             <div class="contact-map-wrap">
                 <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3718.7368054312064!2d81.64366407596573!3d21.242282930055907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDE0JzMyLjIiTiA4McKwMzgnNTQuNyJF!5e0!3m2!1sen!2sin!4v1726665230431!5m2!1sen!2sin" title="New York University" aria-label="New York University" frameborder="0"></iframe>
             </div>
@@ -341,7 +386,15 @@ use PHPMailer\PHPMailer\Exception;
 
 
 ?>
-
+ <script>
+        // Simulate page loading
+        window.addEventListener("load", function() {
+            // Hide the preloader when page is fully loaded
+            document.getElementById("preloader").style.display = "none";
+            // Show the main content
+            document.getElementById("content").style.display = "block";
+        });
+    </script>
 
     <!-- JS
     ============================================ -->

@@ -35,7 +35,27 @@
     <link rel="stylesheet" href="assets/css/style.min.css"> -->
 
 </head>
+<style>
+  .main-menu .sub-menu li {
+    position: relative;
+    padding: 10px;
+    list-style: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
+/* Hover effect for li elements */
+.main-menu .sub-menu li>a:hover {
+    background-color: #0d6efd; /* Add any hover background color you want */
+    color:white!important; /* Change the text color on hover */
+}
+
+/* Optional: Hover effect for h4 */
+.main-menu .sub-menu h4:hover {
+    color: #007bff; /* Add any hover color for the h4 headings */
+}
+
+</style>
 <body>
 
 
@@ -72,11 +92,11 @@
                           
                           <ul>
                             <li>
-                              <a>Website & Web application Development</a>
+                              <a href="web-development.php">Website & Web application Development</a>
                             </li>
 
                             <li>
-                              <a>Mobile App Development</a>
+                              <a href="mobile-development.php">Mobile App Development</a>
                             </li>
                             <li>
                               <a>Api Integration & Development</a>

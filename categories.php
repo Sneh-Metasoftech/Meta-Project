@@ -187,6 +187,7 @@
                 </div>    
                 <div class="text-center">
                     <button type="submit" name="submit" class="btn btn-success">Submit</button>
+                    <button name="insert" class="btn btn-success"><a href="blogs.php">Insert-Blog</a></button>
                  </div>
                 </form>
             </div>

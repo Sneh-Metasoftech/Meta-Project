@@ -76,7 +76,7 @@
                 <!-- Footer Widget Wrap Start -->
                 <div class="footer-widget-wrap">
                     <div class="row">
-                        <div class="col-lg-3 col-sm-6">
+                        <div class="col-lg-4 col-sm-6">
                             <!-- Footer Widget Start -->
                             <div class="footer-widget-about">
                                 <a class="footer-logo" href="index.php"><img src="assets/images/logo-white.png" alt="Logo" style="max-width: 115%;"></a>
@@ -93,23 +93,8 @@
                             </div>
                             <!-- Footer Widget End -->
                         </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <!-- Footer Widget Start -->
-                            <div class="footer-widget">
-                                <h4 class="footer-widget-title">Useful Links</h4>
-
-                                <div class="widget-link">
-                                    <ul class="link">
-                                        <li><a href="#">Terms & Conditions</a></li>
-                                        <li><a href="#">About Company</a></li>
-                                        <li><a href="#">Payment Gatway</a></li>
-                                        <li><a href="#">Policy</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- Footer Widget End -->
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
+                        
+                        <div class="col-lg-4 col-sm-6">
                             <!-- Footer Widget Start -->
                             <div class="footer-widget">
                                 <h4 class="footer-widget-title">Our Services</h4>
@@ -125,7 +110,7 @@
                             </div>
                             <!-- Footer Widget End -->
                         </div>
-                        <div class="col-lg-3 col-sm-6">
+                        <div class="col-lg-4 col-sm-6">
                             <!-- Footer Widget Start -->
                             <div class="footer-widget">
                                 <h4 class="footer-widget-title">Contact Information</h4>

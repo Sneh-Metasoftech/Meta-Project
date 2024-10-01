@@ -77,7 +77,16 @@
     $query= mysqli_query($db,$insert);
     if($query){
         move_uploaded_file("$img_tmp","blog/".$img);
-        echo 'your blog inserted successfully';
+        echo '<script>
+               Swal.fire({
+                    title: "Success!",
+                    text: "your Blog has been Uploaded Sucessfully !",
+                    icon: "success",
+                    showConfirmButton: true,
+                    
+                    });
+               
+            </script>';
     }
     else{
         echo 'your blog inserted failed..!';
@@ -161,17 +170,17 @@
                 <h3 style="color:red; background-color:yellow;margin:0;padding:0;text-align:center;">Welcome Admin  <?php echo($_SESSION['username'])?></h3>
                 <div class="mb-3" style="margin-top: 10px;">
                     <!-- <label for="exampleFormControlInput1" class="form-label">Name:</label> -->
-                    <input type="text" class="form-control" name="title" placeholder="Enter the Blog Title">
+                    <input type="text" class="form-control" name="title" placeholder="Enter the Blog Title" require>
                 </div>
 
                 <div class="mb-3">
                     <!-- <label for="exampleFormControlInput1" class="form-label">Category:</label> -->
-                    <input type="text" class="form-control" name="slug" placeholder="Enter the Blog Slug">
+                    <input type="text" class="form-control" name="slug" placeholder="Enter the Blog Slug" require>
                 </div>    
 
                 <div class="mb-3">
                     <!-- <label for="exampleFormControlInput1" class="form-label">Category:</label> -->
-                    <textarea class="form-control" name="text" aria-label="With textarea" placeholder="Enter the Blog Text-Content"></textarea>
+                    <textarea class="form-control" name="text" aria-label="With textarea" placeholder="Enter the Blog Text-Content" require></textarea>
                 </div>  
 
                 <div class="mb-3">
@@ -183,7 +192,7 @@
                     
               
                 <select class="form-select" name="category" aria-label="Default select example">
-                        <option selected>Select the blog Category</option>
+                        <option selected> </option>
                         <option value="event">Event</option>
                             <option value="technology">Technology</option>
                             <option value="inovation">Innovation</option>

@@ -40,8 +40,58 @@
 
 
 </head>
+<style>
+    .mll{
+        margin-left: 137px;
+    }
+        /* Preloader container styling */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
 
+        /* Shrinking circle animation */
+        .shrink-circle {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            border-radius: 50%;
+            animation: shrink 1.5s infinite ease-in-out;
+        }
+
+        /* Animation keyframes */
+        @keyframes shrink {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .imd{
+            box-shadow: -2px 20px 20px 0px;
+            width: 418px;
+            margin-top: 28px;
+            margin-left: 58px;
+            }
+
+    </style>
 <body>
+  <!-- Preloader -->
+  <div id="preloader">
+        <div class="shrink-circle"></div>
+    </div>
 
 
 
@@ -131,7 +181,7 @@
                             <div class="about-img-wrap">
                                
                                 <div class="about-img about-img-big">
-                                    <img src="assets/images/carrer.jpg" alt="">
+                                    <img src="assets/images/carrer.jpg" alt="" class="imd">
                                 </div>
                               
                             <!-- About Image Wrap End -->
@@ -141,9 +191,9 @@
                             <!-- About Content Wrap Start -->
                             <div class="about-content-wrap">
                               
-                                <p class="text">At The Meta Softech Pvt Ltd, we’re committed to delivering transformative outcomes – including for our employees. It’s why we put people at the center of everything we do. Whether that means providing upskilling programs, empowering our team with innovative tools and technologies like generative AI, or giving you the opportunity to work with some of the most knowledgeable leaders in the industry, we make sure everyone at The Meta Softech Pvt Ltd has what they need to advance their career.</p>
+                                <p class="text mll">At The Meta Softech Pvt Ltd, we’re committed to delivering transformative outcomes – including for our employees. It’s why we put people at the center of everything we do. Whether that means providing upskilling programs, empowering our team with innovative tools and technologies like generative AI, or giving you the opportunity to work with some of the most knowledgeable leaders in the industry, we make sure everyone at The Meta Softech Pvt Ltd has what they need to advance their career.</p>
 
-                                <p class="text">Whether you’re just entering the workforce or are an experienced professional, there’s a place for you here. We’re on the cutting edge – come meet us there.</p>
+                                <p class="text mll">Whether you’re just entering the workforce or are an experienced professional, there’s a place for you here. We’re on the cutting edge – come meet us there.</p>
                                
                             </div>
                             <!-- About Content Wrap End -->
@@ -214,10 +264,19 @@ if(isset($_POST['submit'])){
             
         }
     } else {
-        echo "Only PDF files are allowed.";
-        die;
+
+        echo '<script>
+                    Swal.fire({
+                    title: "Oops!",
+                    text: "Only PDF files are allowed",
+                    icon: "warning",
+                    showConfirmButton: true,
+                    });
+                    
+                    </script>';
         
-    }
+    } 
+    
 
     // Your email logic here
 
@@ -287,11 +346,11 @@ if(isset($_POST['submit'])){
             <div class="container">
                 <!-- Contact Wrap Start -->
                 <div class="contact-wrap" style="    width: 75%;
-    margin: 0 auto;">
+    margin: 0 auto; ">
                     <div class="row justify-content-center">
                         <div class="col-lg-10">
                             <!-- Contact Form Start -->
-                            <div class="contact-form">
+                            <div class="contact-form" style="box-shadow: 0px 6px 27px 7px rgb(8 106 216);">
                                 <div class="contact-form-wrap">
                                     <!-- <div class="heading-wrap text-center">
                                         <span class="sub-title"> Join Our Talented Team </span>
@@ -377,6 +436,15 @@ if(isset($_POST['submit'])){
 
     </div>
 
+    <script>
+        // Simulate page loading
+        window.addEventListener("load", function() {
+            // Hide the preloader when page is fully loaded
+            document.getElementById("preloader").style.display = "none";
+            // Show the main content
+            document.getElementById("content").style.display = "block";
+        });
+    </script>
  
     <!-- JS
     ============================================ -->

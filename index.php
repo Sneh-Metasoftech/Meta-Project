@@ -92,7 +92,7 @@
                             <h2 class="title" data-aos="fade-up" data-aos-delay="800">We transform ideas into technology</h2>
                             <p data-aos="fade-up" data-aos-delay="900">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
                             <div class="hero-btn" data-aos="fade-up" data-aos-delay="1000">
-                                <a class="btn" href="about.php">Read More</a>
+                                <!-- <a class="btn" href="about.php">Read More</a> -->
                             </div>
                         </div>
                         <!-- Hero Content End -->
@@ -115,7 +115,7 @@
                                         <img src="assets/images/counter-1.png" alt="">
                                     </div>
     <div class="service-content">
-        <h3 class="title"><a href="service.php">Infrastructure Technology</a></h3>
+        <h3 class="title">Infrastructure Technology</h3>
         <p class="short-description">IT infrastructure encompasses the hardware, software, network resources, and services required to manage and support</p>
         <p class="full-description" style="display: none;">
         IT infrastructure encompasses the hardware, software, network resources, and services required to manage and support an organization's IT environment. This includes servers, storage systems, networking equipment, operating systems, and data centers. It ensures reliable connectivity, data management, and application performance. Effective IT infrastructure is crucial for operational efficiency, scalability, and security, enabling seamless business operations and supporting digital transformation initiatives.
@@ -134,7 +134,7 @@
                                         <img src="assets/images/ser-icon12.png" alt="">
                             </div>
     <div class="service-content">
-        <h3 class="title"><a href="service.php">Blockchain System</a></h3>
+        <h3 class="title">Blockchain System</h3>
         <p class="short-description">A blockchain system is a decentralized digital ledger that records transactions across multiple computers in a secure and immutable.</p>
         <p class="full-description" style="display: none;">
         A blockchain system is a decentralized digital ledger that records transactions across multiple computers in a secure and immutable.manner. Each transaction is grouped into blocks and linked in chronological order, creating a chain. This technology ensures transparency, security, and tamper-resistance, making it ideal for applications such as cryptocurrency, supply chain management, and smart contracts.
@@ -153,7 +153,7 @@
                                         <img src="assets/images/counter-2.png" alt="">
                                     </div>
     <div class="service-content">
-        <h3 class="title"><a href="service.php">Data Managment</a></h3>
+        <h3 class="title">Data Managment</h3>
         <p class="short-description">Data management encompasses the practices and technologies used to collect, store, organize, and protect data throughout its lifecycle.</p>
         <p class="full-description" style="display: none;">
         Data management encompasses the practices and technologies used to collect, store, organize, and protect data throughout its lifecycle.This includes data governance, quality assurance, integration, and security measures. Effective data management ensures that data is accurate, accessible, and secure, facilitating informed decision-making and operational efficiency. By establishing protocols and systems for handling data, organizations can optimize their data assets and maintain regulatory compliance.
@@ -172,7 +172,7 @@
         <img src="assets/images/ser-icon9.png" alt="">
     </div>
     <div class="service-content">
-        <h3 class="title"><a href="service.php">IT Consultancy</a></h3>
+        <h3 class="title">IT Consultancy</h3>
         <p class="short-description">An IT consultancy provides expert guidance to businesses in optimizing their technology strategies Consultants assess current systems</p>
         <p class="full-description" style="display: none;">
         An IT consultancy provides expert guidance to businesses in optimizing their technology strategies. Consultants assess current systems, identify inefficiencies, and offer tailored solutions for improvements. Services often include IT infrastructure design, cybersecurity, cloud migration, and software integration. Their goal is to enhance operational efficiency, reduce costs, and support digital transformation.
@@ -324,7 +324,7 @@
                                 <!-- Choose Us Item Start -->
                                 <div class="choose-us-item">
                                     <div class="choose-us-img">
-                                        <a href="choose-us.php"><img src="assets/images/choose-us1.jpg" alt=""></a>
+                                        <img src="assets/images/choose-us1.jpg" alt="">
 
 
 
@@ -340,7 +340,7 @@
                                 <!-- Choose Us Item Start -->
                                 <div class="choose-us-item">
                                     <div class="choose-us-img">
-                                        <a href="choose-us.php"><img src="assets/images/choose-us2.jpg" alt=""></a>
+                                        <img src="assets/images/choose-us2.jpg" alt="">
                                         <div class="choose-us-content">
                                             <h3 class="title">Information Database Security</h3>
                                             <p>Database security safeguards data through encryption, access controls, and monitoring to prevent unauthorized access and ensure data integrity and availability</p>
@@ -353,7 +353,7 @@
                                 <!-- Choose Us Item Start -->
                                 <div class="choose-us-item">
                                     <div class="choose-us-img">
-                                        <a href="choose-us.php"><img src="assets/images/choose-us3.jpg" alt=""></a>
+                                       <img src="assets/images/choose-us3.jpg" alt="">
                                         <div class="choose-us-content">
                                             <h3 class="title">Multifunctional Technology</h3>
                                             <p>Multifunctional technology integrates multiple capabilities or functions into a single device or system, enhancing efficiency and versatility across various tasks.</p>
@@ -458,7 +458,7 @@
         <!-- Skill End -->
 
         <!-- Case Study Start -->
-        <div class="section techwix-case-study-section-02 section-padding" style="background-image: url(assets/images/bg/case-study-bg.jpg);">
+        <!-- <div class="section techwix-case-study-section-02 section-padding" style="background-image: url(assets/images/bg/case-study-bg.jpg);">
             <div class="container">
                 <div class="case-study-wrap">
                     <div class="section-title text-center">
@@ -467,60 +467,59 @@
                     </div>
                 </div>
             </div>
-            <!-- Case Study Content Wrap Start -->
+           
             <div class="case-study-content-wrap">
                 <div class="swiper-container case-study-active">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <!-- Single Case Study Start -->
+                          
                             <div class="single-case-study-02">
                                 <div class="case-study-img">
-                                    <a href="#"><img src="assets/images/case-4.jpg" alt=""></a>
+                                    <img src="assets/images/case-4.jpg" alt="">
                                 </div>
                                 <div class="case-study-content">
                                     <p class="sub-title">Database Security</p>
-                                    <h3 class="title"><a href="#"><span>Structure</span> <br> <span>of Malnufication</span></a></h3>
+                                    <h3 class="title"><span>Structure</span> <br> <span>of Malnufication</span></h3>
                                     <p class="text">Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible freelance talent for all your </p>
                                 </div>
                             </div>
-                            <!-- Single Case Study End -->
+                         
                         </div>
                         <div class="swiper-slide">
-                            <!-- Single Case Study Start -->
+                            
                             <div class="single-case-study-02">
                                 <div class="case-study-img">
-                                    <a href="#"><img src="assets/images/case-5.jpg" alt=""></a>
+                                    <img src="assets/images/case-5.jpg" alt="">
                                 </div>
                                 <div class="case-study-content">
                                     <p class="sub-title">Database Security</p>
-                                    <h3 class="title"><a href="#"><span>Multifunctional</span> <br> <span>of Technology</span></a></h3>
+                                    <h3 class="title"><span>Multifunctional</span> <br> <span>of Technology</span></h3>
                                     <p class="text">Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible freelance talent for all your </p>
                                 </div>
                             </div>
-                            <!-- Single Case Study End -->
+                      
                         </div>
                         <div class="swiper-slide">
-                            <!-- Single Case Study Start -->
+                           
                             <div class="single-case-study-02">
                                 <div class="case-study-img">
                                     <a href="#"><img src="assets/images/case-6.jpg" alt=""></a>
                                 </div>
                                 <div class="case-study-content">
                                     <p class="sub-title">Database Security</p>
-                                    <h3 class="title"><a href="#"><span>Blockchain</span> <br> <span>of technology</span></a></h3>
+                                    <h3 class="title"><span>Blockchain</span> <br> <span>of technology</span></h3>
                                     <p class="text">Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible freelance talent for all your </p>
                                 </div>
                             </div>
-                            <!-- Single Case Study End -->
+                            
                         </div>
                     </div>
-
-                    <!-- Add Pagination -->
+                    
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
-            <!-- Case Study Content Wrap End -->
-        </div>
+            >
+        </div> -->
         <!-- Case Study End -->
 
         <!-- Testimonial Start  -->
@@ -659,10 +658,10 @@
                                     <!-- Single Team Start -->
                                     <div class="single-team">
                                         <div class="team-img">
-                                            <a href="team .php"><img src="assets/images/team/team-1.jpg" alt=""></a>
+                                        <img src="assets/images/team/team-1.jpg" alt="">
                                         </div>
                                         <div class="team-content">
-                                            <h3 class="name"><a href="team .php">Andrew <br> Max Fetcher</a></h3>
+                                            <h3 class="name text-white">Andrew <br> Max Fetcher</h3>
                                             <span class="designation">CEO, techwix</span>
                                             <div class="team-social">
                                                 <ul class="social">
@@ -680,10 +679,10 @@
                                     <!-- Single Team Start -->
                                     <div class="single-team">
                                         <div class="team-img">
-                                            <a href="team .php"><img src="assets/images/team/team-2.jpg" alt=""></a>
+                                            <img src="assets/images/team/team-2.jpg" alt="">
                                         </div>
                                         <div class="team-content">
-                                            <h3 class="name"><a href="team .php">Arnold <br> human</a></h3>
+                                            <h3 class="name text-white">Arnold <br> human</h3>
                                             <span class="designation">CEO, techwix</span>
                                             <div class="team-social">
                                                 <ul class="social">
@@ -701,10 +700,10 @@
                                     <!-- Single Team Start -->
                                     <div class="single-team">
                                         <div class="team-img">
-                                            <a href="team .php"><img src="assets/images/team/team-3.jpg" alt=""></a>
+                                            <img src="assets/images/team/team-3.jpg" alt="">
                                         </div>
                                         <div class="team-content">
-                                            <h3 class="name"><a href="team.php">Mike <br> Holder</a></h3>
+                                            <h3 class="name text-white">Mike <br> Holder</h3>
                                             <span class="designation">CEO, techwix</span>
                                             <div class="team-social">
                                                 <ul class="social">
@@ -722,10 +721,10 @@
                                     <!-- Single Team Start -->
                                     <div class="single-team">
                                         <div class="team-img">
-                                            <a href="team.php"><img src="assets/images/team/team-4.jpg" alt=""></a>
+                                        <img src="assets/images/team/team-4.jpg" alt="">
                                         </div>
                                         <div class="team-content">
-                                            <h3 class="name"><a href="team.php">Joakim <br> Ken</a></h3>
+                                            <h3 class="name text-white">Joakim <br> Ken</h3>
                                             <span class="designation">CEO, techwix</span>
                                             <div class="team-social">
                                                 <ul class="social">

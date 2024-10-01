@@ -187,7 +187,10 @@
                     </tbody>
                     <?php  } }?>
                 </table>
-
+                     <div class="text-center">
+                    <button name="insert" class="btn btn-success"><a href="blogs.php">Insert-Blog</a></button>
+                     <button name="insert" class="btn btn-success"><a href="logout.php">logout</a></button>
+                 </div>
             </div>
                 
 

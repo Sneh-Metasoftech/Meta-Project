@@ -123,45 +123,47 @@
                     while($row = mysqli_fetch_assoc($resQB)){
                 ?>
                         <div class="col-lg-4 col-md-6">
-                            <!-- Single Blog Start -->
-                            <div class="single-blog">
-                                <div class="blog-image">
-                                    <a href="blog-details.php"><img src="blog/<?php echo $row['featured_image'];?>" alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><h3 style="color:white;"><?php echo date(' j ', strtotime($row['create_at'])); ?></h3></span>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <span><i class="fas fa-user"></i> <a href="#"><?php echo $row['author_id'];?></a></span>
-                                        <span><i class="far fa-comments"></i> 0 Comments</span>
-                                    </div>
-                                    <h3 class="title"><a href="blog-details.php"><?php echo $row['slug'];?> </a></h3>
-                                    <div class="blog-btn">
-                                        <a class="blog-btn-link" href="blog-details.php">Read Full <i class="fas fa-long-arrow-alt-right"></i></a>
-                                    </div>
-                                </div>
+                    <!-- Single Blog Start -->
+                    <div class="single-blog">
+                        <div class="blog-image">
+                            <a href="blog-details.php?id=<?php echo $row['id']; ?>">
+                                <img src="blog/<?php echo $row['featured_image']; ?>" alt="">
+                            </a>
+                            <div class="top-meta">
+                                <span class="date">
+                                    <h2 style="color:white;"><?php echo date(' j ', strtotime($row['create_at'])); ?></h2>
+                                </span>
                             </div>
-                            <!-- Single Blog End -->
                         </div>
-                       
-                        
-                        
-                        <?php
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-user"></i> <a href="#"><?php echo $row['author_id']; ?></a></span>
+                                <span><i class="far fa-comments"></i> 0 Comments</span>
+                            </div>
+                            <h3 class="title"><a href="blog-details.php?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></h3>
+                            <div class="blog-btn">
+                                <a class="blog-btn-link" href="blog-details.php?id=<?php echo $row['id']; ?>">Read Full <i class="fas fa-long-arrow-alt-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Blog End -->
+                </div>
+                <?php
                     }
                 }
-                
-                
-                
                 ?>
+            </div>
+        </div>
+                        
+                        
                         
                     </div>
                     <!-- Page Pagination Start -->
                     <div class="techwix-pagination">
                         <ul class="pagination justify-content-center">
                             <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                            <li><a href="blog.php">1</a></li>
-                            <li><a class="active" href="blog.php">2</a></li>
+                            <li><a href="blog.php"class="active">1</a></li>
+                            <li><a href="blog.php">2</a></li>
                             <li><a href="blog.php">3</a></li>
                             <li><span>...</span></li>
                             <li><a href="blog.php"><i class="fa fa-angle-right"></i></a></li>
@@ -173,121 +175,10 @@
         </div>
         <!-- Blog End -->
 
-
-        <!-- Footer Section Start -->
-        <div class="section footer-section" style="background-image: url(assets/images/bg/footer-bg.jpg);">
-
-            <div class="container">
-                <!-- Footer Widget Wrap Start -->
-                <div class="footer-widget-wrap">
-                    <div class="row">
-                        <div class="col-lg-3 col-sm-6">
-                            <!-- Footer Widget Start -->
-                            <div class="footer-widget-about">
-                                <a class="footer-logo" href="index.php"><img src="assets/images/logo-white.png" alt="Logo"></a>
-                                <p>Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible freelance talent.</p>
-                                <div class="footer-social">
-                                    <ul class="social">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- Footer Widget End -->
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <!-- Footer Widget Start -->
-                            <div class="footer-widget">
-                                <h4 class="footer-widget-title">Useful Links</h4>
-
-                                <div class="widget-link">
-                                    <ul class="link">
-                                        <li><a href="#">Terms & Conditions</a></li>
-                                        <li><a href="#">About Company</a></li>
-                                        <li><a href="#">Payment Gatway</a></li>
-                                        <li><a href="#">Policy</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- Footer Widget End -->
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <!-- Footer Widget Start -->
-                            <div class="footer-widget">
-                                <h4 class="footer-widget-title">Our Services</h4>
-
-                                <div class="widget-link">
-                                    <ul class="link">
-                                        <li><a href="#">Data Security</a></li>
-                                        <li><a href="#">IT Managment</a></li>
-                                        <li><a href="#">Outsourcing</a></li>
-                                        <li><a href="#">Networking</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- Footer Widget End -->
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <!-- Footer Widget Start -->
-                            <div class="footer-widget">
-                                <h4 class="footer-widget-title">Contact Information</h4>
-
-                                <div class="widget-info">
-                                    <ul>
-                                        <li>
-                                            <div class="info-icon">
-                                                <i class="flaticon-phone-call"></i>
-                                            </div>
-                                            <div class="info-text">
-                                                <span><a href="#">+91 458 654 528</a></span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="info-icon">
-                                                <i class="far fa-envelope-open"></i>
-                                            </div>
-                                            <div class="info-text">
-                                                <span><a href="#">info@example.com</a></span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="info-icon">
-                                                <i class="flaticon-pin"></i>
-                                            </div>
-                                            <div class="info-text">
-                                                <span>60 East 65th Street, NY</span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- Footer Widget End -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Footer Widget Wrap End -->
-            </div>
-
-            <!-- Footer Copyright Start -->
-            <div class="footer-copyright-area">
-                <div class="container">
-                    <div class="footer-copyright-wrap">
-                        <div class="row align-items-center">
-                            <div class="col-lg-12">
-                                <!-- Footer Copyright Text Start -->
-                                <div class="copyright-text text-center">
-                                    <p>© Copyrights 2022 techwix All rights reserved. </p>
-                                </div>
-                                <!-- Footer Copyright Text End -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer Copyright End -->
-        </div>
-        <!-- Footer Section End -->
+        <?php
+       
+       include("footer.php");
+?>
 
         <!-- back to top start -->
         <div class="progress-wrap">
