@@ -175,9 +175,7 @@
         </div>
         <!-- Blog End -->
 
-        <?php
-       
-       include("footer.php");
+        <?php       include("footer.php");
 ?>
 
         <!-- back to top start -->
@@ -188,7 +186,7 @@
         </div>
         <!-- back to top end -->
 
-    </div>
+    </div>t
 
     <!-- JS
     ============================================ -->

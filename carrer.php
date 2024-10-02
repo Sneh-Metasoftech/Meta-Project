@@ -80,12 +80,21 @@
             }
         }
         .imd{
-            box-shadow: -2px 20px 20px 0px;
+            box-shadow: -2px 9px 25px 0px #014bac;
             width: 418px;
             margin-top: 28px;
             margin-left: 58px;
             }
-
+@media only screen and (max-width: 991px) {
+    .mll{
+        margin-left: 10px;
+        text-align: center;
+    }
+    .imd{
+        margin-left: 0px;
+        margin-top: -60px;
+    }
+}
     </style>
 <body>
   <!-- Preloader -->
