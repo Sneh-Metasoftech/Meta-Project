@@ -46,6 +46,13 @@
         .llt{
         margin-left: 0px;
         }
+
+            .circular-img {
+    width: 80px; /* Adjust size as needed */
+    height:80px; /* Same value as width for a perfect circle */
+    border-radius: 50%!important;
+    object-fit: cover; /* Ensures the image is properly fitted within the circle */
+}
         @media only screen and (max-width: 991px) {
         .llt{
         margin-left: 50px;
@@ -276,7 +283,7 @@
 
         <?php
 
-$sql = "SELECT title, create_at, featured_image FROM post ORDER BY create_at DESC LIMIT 3";
+$sql = "SELECT id, title, create_at, featured_image FROM post ORDER BY create_at DESC LIMIT 3";
 $result = $db->query($sql);
 
 if ($result->num_rows > 0) {
@@ -285,12 +292,12 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo '
         <li>
-        <a class="post-link" href="blog-details.php">
+        <a class="post-link" href="blog-details.php?id=' . $row["id"] . '">
             <div class="post-thumb">
-                <img src="assets/images/blog/' . $row["featured_image"] . '" alt="">
+                <img class="circular-img" src="blog/' . $row["featured_image"] . '" alt="Post Image">
             </div>
             <div class="post-text">
-                <h4 class="title">' . $row["title"] . '</h4>
+                <h3 class="title">' . $row["title"] . '</h3>
                 <span class="post-meta"><i class="far fa-calendar-alt"></i> ' . date("F d, Y", strtotime($row["create_at"])) . '</span>
             </div>
         </a>
@@ -302,8 +309,9 @@ if ($result->num_rows > 0) {
 }
 
 ?>
+
         <!-- Widget Recent Post Start -->
-        <div class="recent-posts">
+       <!--  <div class="recent-posts">
         <ul>
         <li>
         <a class="post-link" href="blog-details.php">
@@ -339,7 +347,7 @@ if ($result->num_rows > 0) {
         </a>
         </li>
         </ul>
-        </div>
+        </div> -->
         <!-- Widget Recent Post End -->
         </div>
         <!-- Sidebar Widget End -->
