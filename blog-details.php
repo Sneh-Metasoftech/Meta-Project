@@ -134,16 +134,28 @@
         <div class="row">
 
 
-        <?php
-        if (isset($_GET['id'])) {
-        $post_id = $_GET['id'];
+     
+       <?php
+    // Check if 'id' is set in the URL
+    if (isset($_GET['id'])) {
+        // Escape the 'id' value to prevent SQL injection
+        $post_id = mysqli_real_escape_string($db, $_GET['id']);
 
         // Fetch the specific post using the id from URL
-        $selQB = "SELECT * FROM `post` WHERE id = $post_id";
+        $selQB = "SELECT * FROM `post` WHERE id = '$post_id'";
         $resQB = mysqli_query($db, $selQB);
 
-        if (mysqli_num_rows($resQB) > 0) {
-        $row = mysqli_fetch_assoc($resQB);
+        if ($resQB && mysqli_num_rows($resQB) > 0) {
+            // Fetch the result row
+            $row = mysqli_fetch_assoc($resQB);
+        ?>
+        <?php
+
+             $post_id = $row['id'];
+        $commentCountQuery = "SELECT COUNT(*) AS comment_count FROM comments WHERE posts_id = $post_id";
+        $commentCountResult = mysqli_query($db, $commentCountQuery);
+        $commentCountRow = mysqli_fetch_assoc($commentCountResult);
+        $comment_count = $commentCountRow['comment_count'];
         ?>
         <div class="col-xl-8 col-lg-8">
         <!-- Blog Details Post Start -->
@@ -161,7 +173,7 @@
         <div class="blog-meta">
         <span class="tag"><i class="far fa-bookmark"></i> <?php echo $row['category_id'];?></span>
         <span><i class="fas fa-user"></i> <?php echo $row['author_id'];?></span>
-        <!-- <span><i class="far fa-comments"></i> 0 Comments</span> -->
+        <span><i class="far fa-comments"></i><?php echo $comment_count; ?></span>
         </div>
         <h3 class="title"><?php echo $row['title'];?></h3>
 
@@ -208,43 +220,110 @@
         <div class="comment-wrap llt">
         <!-- Commtent Form Start -->
         <div class="comment-form">
-        <h3 class="comment-title">Comments (3)</h3>
+        <h3 class="comment-title">Comments</h3>
+<?php
+// Ensure post_id is set and is an integer
+$post_id = isset($_GET['id']) ? $_GET['id'] : 0;
 
-        <!-- Commtent Form Wrap Start -->
-        <div class="comment-form-wrap ">
-        <form action="#">
+if ($post_id == 0) {
+   die("Invalid post ID.");
+}
+
+// Process the form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    // Sanitize post_id
+    $post_id = $_POST['post_id'];
+
+    // Prepare SQL query to insert form data into the database
+    $sql = "INSERT INTO comments (name, email, message, posts_id) VALUES ('$name', '$email', '$message', '$post_id')";
+
+    if ($db->query($sql) === TRUE) {
+        echo "<script>
+        alert('your comment has been submmited successfully');
+                location.href='';
+        </script>";
+    } else {
+        echo "Error: " . $sql . "<br>" . $db->error;
+    }
+}
+
+// Retrieve and display comments for this specific post
+$sql = "SELECT * FROM comments WHERE posts_id = $post_id ORDER BY created_at DESC";
+$result = $db->query($sql);
+
+if (!$result) {
+    die("Error: " . $db->error);
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments for Post <?php echo $post_id; ?></title>
+</head>
+<body>
+
+    <!-- Display Form Submissions -->
+    <?php if ($result->num_rows > 0): ?>
+        <ul>
+            <?php while($row = $result->fetch_assoc()): ?>
+                <li>
+                    <strong>Name:</strong> <?php echo $row['name']; ?> <br>
+                    <strong>Email:</strong> <?php echo $row['email']; ?> <br>
+                    <strong>Message:</strong> <?php echo $row['message']; ?> <br>
+                    <em>Submitted on:</em> <?php echo $row['created_at']; ?>
+                </li>
+                <hr>
+            <?php endwhile; ?>
+        </ul>
+    <?php else: ?>
+        <p>No comments yet for this post.</p>
+    <?php endif; ?>
+
+    <!-- Comment Form -->
+   
+
+
+
+
+
+<!-- Comment form -->
+<div class="comment-form-wrap">
+    <form action="#" method="POST">
+        <input type="hidden" name="post_id" value="<?php echo $post_id;?>" />
         <div class="row">
             <div class="col-md-6">
-                <!--  Single Form Start  -->
                 <div class="single-form">
-                    <input class="form-control" type="text" placeholder="Your Name">
+                    <input class="form-control" type="text" name="name" placeholder="Your Name" required>
                 </div>
-                <!--  Single Form End  -->
             </div>
             <div class="col-md-6">
-                <!--  Single Form Start  -->
                 <div class="single-form">
-                    <input class="form-control" type="email" placeholder="Your Email">
+                    <input class="form-control" type="email" name="email" placeholder="Your Email" required>
                 </div>
-                <!--  Single Form End  -->
             </div>
             <div class="col-md-12">
-                <!--  Single Form Start  -->
                 <div class="single-form">
-                    <textarea class="form-control" placeholder="Your Message"></textarea>
+                    <textarea class="form-control" name="message" placeholder="Your Message" required></textarea>
                 </div>
-                <!--  Single Form End  -->
             </div>
             <div class="col-md-12">
-                <!--  Single Form Start  -->
                 <div class="form-btn">
                     <button class="btn" type="submit">Submit</button>
                 </div>
-                <!--  Single Form End  -->
             </div>
         </div>
-        </form>
-        </div>
+    </form>
+</div>
+
+
         <!-- Commtent Form Wrap End -->
         </div>
         <!-- Commtent Form End -->
@@ -360,9 +439,9 @@ if ($result->num_rows > 0) {
 $categories = [
     "Event",
     "Technology",
-    "Innovation",
     "Learning",
-    "Information"
+    "Information",
+    "inovation"
 ];
 
 echo '<div class="sidebar-widget">
@@ -483,5 +562,5 @@ echo '  </ul>
         </body>
 
 
-        <!-- Mirrored from thepixelcurve.com/html/techwix/techwix/blog-details.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Sep 2024 10:03:55 GMT -->
+       
         </html>

@@ -78,6 +78,7 @@
     if($query){
         move_uploaded_file("$img_tmp","blog/".$img);
         echo '<script>
+                location.href="";
                Swal.fire({
                     title: "Success!",
                     text: "your Blog has been Uploaded Sucessfully !",
@@ -170,17 +171,17 @@
                 <h3 style="color:red; background-color:yellow;margin:0;padding:0;text-align:center;">Welcome Admin  <?php echo($_SESSION['username'])?></h3>
                 <div class="mb-3" style="margin-top: 10px;">
                     <!-- <label for="exampleFormControlInput1" class="form-label">Name:</label> -->
-                    <input type="text" class="form-control" name="title" placeholder="Enter the Blog Title" require>
+                    <input type="text" class="form-control" name="title" placeholder="Enter the Blog Title" required>
                 </div>
 
                 <div class="mb-3">
                     <!-- <label for="exampleFormControlInput1" class="form-label">Category:</label> -->
-                    <input type="text" class="form-control" name="slug" placeholder="Enter the Blog Slug" require>
+                    <input type="text" class="form-control" name="slug" placeholder="Enter the Blog Slug" required>
                 </div>    
 
                 <div class="mb-3">
                     <!-- <label for="exampleFormControlInput1" class="form-label">Category:</label> -->
-                    <textarea class="form-control" name="text" aria-label="With textarea" placeholder="Enter the Blog Text-Content" require></textarea>
+                    <textarea class="form-control" name="text" aria-label="With textarea" placeholder="Enter the Blog Text-Content" required></textarea>
                 </div>  
 
                 <div class="mb-3">
@@ -191,7 +192,7 @@
                 <div class="mb-3">
                     
               
-                <select class="form-select" name="category" aria-label="Default select example">
+                <select class="form-select" name="category" aria-label="Default select example"required>
                         <option selected> </option>
                         <option value="event">Event</option>
                             <option value="technology">Technology</option>
@@ -205,7 +206,7 @@
 
                 <div class="mb-3">
                     <!-- <label for="exampleFormControlInput1" class="form-label">Category:</label> -->
-                    <input type="file" class="form-control" name="image" placeholder="Enter the Blog featured image">
+                    <input type="file" class="form-control" name="image" placeholder="Enter the Blog featured image" required>
                 </div> 
 
               

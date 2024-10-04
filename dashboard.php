@@ -148,14 +148,14 @@
                     <thead>
                         <tr>
                             <th>S.no</th>
-                            <th>Title</th>
-                            <th>Slug</th>
-                            <th style="width:27%;">Text-content</th>
+                            <th style="width:17%;">Title</th>
+                            <th style="width: 10%;">Slug</th>
+                            <th style="width:22%;">Text-content</th>
                             <!-- <th>Admin</th> -->
-                            <th style="width: 22px;">Category</th>
-                            <th>Images</th>
-                            <th>Date & Time </th>
-                            <th>operations</th>
+                            <th style="width: 7%;">Category</th>
+                            <th style="width:9%;">Images</th>
+                            <th style="width: 7%;">Date & Time </th>
+                            <th style="width:20%;">operations</th>
                         </tr>
                     </thead>
                     <tbody>

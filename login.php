@@ -158,7 +158,7 @@
         if(mysqli_num_rows($query)>0){
             $_SESSION['username']=$username;
             echo '<script>
-            location.href="categories.php"
+            location.href="blogs.php"
                Swal.fire({
                   
                     title: "Success!",

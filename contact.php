@@ -369,15 +369,18 @@ use PHPMailer\PHPMailer\Exception;
             // echo 'Message has been sent';
         
          echo '<script>
-               Swal.fire({
-                    title: "Success!",
-                    text: "your request has been Submmited Sucessfully !",
-                    icon: "success",
-                    showConfirmButton: true,
-                    
-                    });
-               
-            </script>';
+    Swal.fire({
+        title: "Success!",
+        text: "Your request has been submitted successfully!",
+        icon: "success",
+        showConfirmButton: true
+    });
+
+    setTimeout(function () {
+        location.replace(location.href); // This will reload the page without resubmitting the form
+    }, 5000); // 25000 milliseconds = 25 seconds
+</script>
+';
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }

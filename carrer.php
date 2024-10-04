@@ -336,7 +336,7 @@ if(isset($_POST['submit'])){
                     text: "your request has been Submmited Sucessfully !",
                     icon: "success",
                     showConfirmButton: true,
-                    
+                    location.href:" ";
                     });
                </script>';
  
@@ -371,7 +371,7 @@ if(isset($_POST['submit'])){
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
                                               
-                                                    <input type="text" placeholder="Name *" name="name">
+                                                    <input type="text" placeholder="Name *" name="name" required>
                                                 </div>
                                                 <!-- Single Form End -->
                                             </div>
@@ -379,7 +379,7 @@ if(isset($_POST['submit'])){
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
                                               
-                                                    <input type="email" placeholder="Email *" name="email">
+                                                    <input type="email" placeholder="Email *" name="email" required>
                                                 </div>
                                                 <!-- Single Form End -->
                                             </div>
@@ -387,7 +387,7 @@ if(isset($_POST['submit'])){
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
                                                
-                                                    <input type="tel" placeholder="Phone" name="phone" maxlength="10">
+                                                    <input type="tel" placeholder="Phone" name="phone" maxlength="10" required>
                                                 </div>
                                                 <!-- Single Form End -->
                                             </div>
@@ -396,7 +396,7 @@ if(isset($_POST['submit'])){
                                                 <!-- Single Form Start -->
                                                 <div class="single-form">
                                               
-                                                <input type="file" id="files" name="file" accept="pdf"  >
+                                                <input type="file" id="files" name="file" accept="pdf" required >
                                                 </div>
                                                 <!-- Single Form End -->
                                             </div>

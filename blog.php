@@ -39,7 +39,9 @@
     <link rel="stylesheet" href="assets/css/style.min.css"> -->
 
 </head>
+<style>
 
+</style>
 <body>
 
     <div class="main-wrapper">
@@ -121,6 +123,11 @@
                 $resQB = mysqli_query($db,$selQB);
                 if(mysqli_num_rows($resQB)>0){
                     while($row = mysqli_fetch_assoc($resQB)){
+                          $post_id = $row['id'];
+        $commentCountQuery = "SELECT COUNT(*) AS comment_count FROM comments WHERE posts_id = $post_id";
+        $commentCountResult = mysqli_query($db, $commentCountQuery);
+        $commentCountRow = mysqli_fetch_assoc($commentCountResult);
+        $comment_count = $commentCountRow['comment_count'];
                 ?>
                         <div class="col-lg-4 col-md-6">
                     <!-- Single Blog Start -->
@@ -138,7 +145,7 @@
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span><i class="fas fa-user"></i> <a href="#"><?php echo $row['author_id']; ?></a></span>
-                                <span><i class="far fa-comments"></i> 0 Comments</span>
+                                <span><i class="far fa-comments"></i><?php echo $comment_count; ?> </span>
                             </div>
                             <h3 class="title"><a href="blog-details.php?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></h3>
                             <div class="blog-btn">
@@ -186,7 +193,7 @@
         </div>
         <!-- back to top end -->
 
-    </div>t
+    </div>                                                                                     
 
     <!-- JS
     ============================================ -->
