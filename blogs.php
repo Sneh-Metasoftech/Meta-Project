@@ -1,15 +1,47 @@
 <?php
     include("db.php");
-    session_start();
-    if(@$_SESSION['username']==""){
-        session_destroy();
-        echo '<script>
-                    location.href="login.php"
-            </script>';
+    // session_start();
+    // if(@$_SESSION['username']==""){
+    //     session_destroy();
+    //     echo '<script>
+    //                 location.href="login.php"
+    //         </script>';
+    // }
+
+session_start();
+
+// Set the session duration (in seconds)
+$inactive = 300; // 3 minutes
+
+if (isset($_SESSION['loggedin']) && isset($_SESSION['username'])) {
+    // Check if the timeout has been set
+    if (isset($_SESSION['timeout'])) {
+        // Calculate the session's lifetime
+        $session_life = time() - $_SESSION['timeout'];
+
+        // If the session life exceeds the inactive time, log the user out
+        if ($session_life > $inactive) {
+            session_unset();    // Unset all session variables
+            session_destroy();  // Destroy the session
+            header("Location: logout.php"); // Redirect to logout page
+            exit();
+        }
     }
+
+    // Reset the timeout if the user is still active
+    $_SESSION['timeout'] = time();
+
+    // Display the username and dashboard content
+    echo "Welcome, " . $_SESSION['username'] . "!<br>";
+    echo "You are on the dashboard. You'll be logged out automatically after 3 minutes of inactivity.";
+} else {
+    // If user is not logged in, redirect to login page
+    header("Location: login.php");
+    exit();
+}
+
+
 ?>
-
-
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -50,6 +82,20 @@
     <link rel="stylesheet" href="assets/css/style.min.css"> -->
 
 </head>
+    <style>
+        /* Blinking animation */
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Class that will make the timer blink */
+        .blinking {
+            animation: blink 1s infinite; /* Blink every 1 second */
+            color: red; /* Change color to red while blinking */
+        }
+    </style>
 
 <body>
 
@@ -165,6 +211,8 @@
 
             <div class="container mtt">
                 <h2 class="text-center">Blog Section</h2>
+                <h2 id="timer">Time remaining: 3m 0s</h2>
+    <h4>You are on the dashboard. You'll be logged out automatically after 3 minutes of inactivity.</h4>
             <div class="container-6  mtt mtl">
     
                 <form  action="#"  method="post" enctype="multipart/form-data" class="p-1 " style="box-shadow: 0px 4px 7px 1px;border-radius: 10px; padding:15px!important;">
@@ -226,7 +274,36 @@
        
        include("footer.php");
 ?>
-        
+       <script>
+        // Set the countdown timer duration (in seconds)
+        const countdownDuration = 300; // 3 minutes
+        let timeRemaining = countdownDuration;
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+
+            // Display the time remaining
+            const timerElement = document.getElementById("timer");
+            timerElement.innerText = `Time remaining: ${minutes}m ${seconds}s`;
+
+            // Start blinking if 1 minute or less is remaining
+            if (timeRemaining <= 120) {
+                timerElement.classList.add('blinking');
+            }
+
+            if (timeRemaining <= 0) {
+                clearInterval(timerInterval);
+                // Automatically log out
+                window.location.href = 'logout.php'; // Redirect to logout page
+            }
+
+            timeRemaining--;
+        }
+
+        // Update the timer every second
+        const timerInterval = setInterval(updateTimer, 1000);
+    </script>
     <!-- JS
     ============================================ -->
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>

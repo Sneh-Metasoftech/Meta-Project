@@ -1,7 +1,30 @@
 <?php
 	include("db.php");
-	session_start();
+	// session_start();
    
+session_start();
+
+// Dummy username for the example, usually fetched from a login form or database
+$username = "Meta Softech"; 
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Fetch the username and password from the form (assuming they are sent via POST)
+    $username = $_POST['user'];
+    $password = $_POST['password']; // You should validate this in real implementation
+
+    // Dummy login validation (in practice, check against database)
+   
+        // Successful login
+        $_SESSION['username'] = $username;
+        $_SESSION['loggedin'] = true;
+        $_SESSION['timeout'] = time(); // Start session timeout
+        
+        // Redirect to the dashboard
+        header('Location: blogs.php');
+        exit();
+  
+}
 ?>
 
 <!doctype html>
