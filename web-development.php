@@ -1,5 +1,5 @@
 <?php
- include("db.php");
+include("db.php");
 ?>
 
 <!doctype html>
@@ -7,10 +7,11 @@
 
 
 <!-- Mirrored from thepixelcurve.com/html/techwix/techwix/blog.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Sep 2024 10:03:46 GMT -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Meta Softech Private Limited</title>
+    <title>Meta Softech Private Limited</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -40,209 +41,359 @@
 
 </head>
 <style>
- <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-.font{
-    font-size: 16px;
-    font-weight: 600;
-}
-        .containers {
-            width: 85%;
-            margin: auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+    .star-rating .fa-star,
+    .star-rating .fa-star-half-alt {
+        color: #FFD700;
+        /* Gold color for yellow stars */
+    }
 
-        h1 {
-            text-align: center;
-            color: #333;
-        }
+    /* Change the color of the carousel control icons to red */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        filter: invert(32%) sepia(100%) saturate(5268%) hue-rotate(360deg) brightness(100%) contrast(105%);
+    }
 
-        .section {
-            margin-bottom: 40px;
-        }
 
-        h2 {
-            color: #ff6347;
-            border-bottom: 2px solid #ff6347;
-            padding-bottom: 10px;
-        }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+  .zigzag-section {
+      padding: 50px 0;
+    }
 
-        ul li {
-            padding: 10px 0;
-        }
+    .zigzag-section .row:nth-child(even) .content {
+      order: 2;
+    }
 
-        .ull li::before {
-            content: "✔";
-            margin-right: 10px;
-            color: green;
-        }
+    .zigzag-section img {
+      width: 100%;
+      height: auto;
+    }
 
-       
+    /* Fade-in animations for left and right */
+    .fade-in-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
 
-        .images {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 30px;
-        }
+    .fade-in-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
 
-        .images img {
-            width: 45%;
-            border-radius: 10px;
-        }
-    </style>
+    /* Add visible class when in view */
+    .visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
 </style>
+
 <body>
 
     <div class="main-wrapper">
 
 
-         <!-- Header Start  -->
-      <?php
-         include("header.php");
-         ?>
- <!-- Header End  -->
-
-
+        <!-- Header Start  -->
+        <?php
+        include("header.php");
+        ?>
         <!-- Page Banner Start -->
-        <div class="section page-banner-section" style="background-image: url(assets/images/bg/page-banner.jpg);">
-            <div class="shape-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="944px" height="894px">
-                    <defs>
-                        <linearGradient id="PSgrad_0" x1="88.295%" x2="0%" y1="0%" y2="46.947%">
-                            <stop offset="0%" stop-color="rgb(67,186,255)" stop-opacity="1" />
-                            <stop offset="100%" stop-color="rgb(113,65,177)" stop-opacity="1" />
-                        </linearGradient>
-
-                    </defs>
-                    <path fill-rule="evenodd" fill="rgb(43, 142, 254)" d="M39.612,410.76 L467.344,29.824 C516.51,-13.476 590.638,-9.93 633.938,39.613 L914.192,317.344 C957.492,366.50 953.109,440.637 904.402,483.938 L476.671,864.191 C427.964,907.492 353.376,903.109 310.76,854.402 L29.823,576.670 C-13.477,527.963 -9.94,453.376 39.612,410.76 Z" />
-                    <path fill="url(#PSgrad_0)" d="M39.612,410.76 L467.344,29.824 C516.51,-13.476 590.638,-9.93 633.938,39.613 L914.192,317.344 C957.492,366.50 953.109,440.637 904.402,483.938 L476.671,864.191 C427.964,907.492 353.376,903.109 310.76,854.402 L29.823,576.670 C-13.477,527.963 -9.94,453.376 39.612,410.76 Z" />
-                </svg>
-            </div>
-            <div class="shape-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="726.5px" height="726.5px">
-                    <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="0.302" fill="none" d="M28.14,285.269 L325.37,21.217 C358.860,-8.851 410.655,-5.808 440.723,28.14 L704.777,325.36 C734.846,358.859 731.802,410.654 697.979,440.722 L400.955,704.776 C367.132,734.844 315.338,731.802 285.269,697.978 L21.216,400.954 C-8.852,367.132 -5.808,315.337 28.14,285.269 Z" />
-                </svg>
-            </div>
-            <div class="shape-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="515px" height="515px">
-                    <defs>
-                        <linearGradient id="PSgrad_0" x1="0%" x2="89.879%" y1="0%" y2="43.837%">
-                            <stop offset="0%" stop-color="rgb(67,186,255)" stop-opacity="1" />
-                            <stop offset="100%" stop-color="rgb(113,65,177)" stop-opacity="1" />
-                        </linearGradient>
-
-                    </defs>
-                    <path fill-rule="evenodd" fill="rgb(43, 142, 254)" d="M19.529,202.280 L230.531,14.698 C254.559,-6.661 291.353,-4.498 312.714,19.528 L500.295,230.531 C521.656,254.558 519.493,291.353 495.466,312.713 L284.463,500.295 C260.436,521.655 223.641,519.492 202.281,495.465 L14.699,284.462 C-6.660,260.435 -4.498,223.640 19.529,202.280 Z" />
-                    <path fill="url(#PSgrad_0)" d="M19.529,202.280 L230.531,14.698 C254.559,-6.661 291.353,-4.498 312.714,19.528 L500.295,230.531 C521.656,254.558 519.493,291.353 495.466,312.713 L284.463,500.295 C260.436,521.655 223.641,519.492 202.281,495.465 L14.699,284.462 C-6.660,260.435 -4.498,223.640 19.529,202.280 Z" />
-                </svg>
-            </div>
-            <div class="shape-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="972.5px" height="970.5px">
-                    <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M38.245,381.102 L435.258,28.158 C480.467,-12.32 549.697,-7.964 589.888,37.244 L942.832,434.257 C983.23,479.466 978.955,548.697 933.746,588.888 L536.733,941.832 C491.524,982.23 422.293,977.955 382.103,932.745 L29.158,535.732 C-11.32,490.523 -6.963,421.293 38.245,381.102 Z" />
-                </svg>
-            </div>
-            <div class="container">
+<div class="section page-banner-section" style="background-image: url(assets/images/bg/ihhh.jpg);">
+<div class="container">
                 <div class="page-banner-wrap">
                     <div class="row">
                         <div class="col-lg-12">
                             <!-- Page Banner Content Start -->
                             <div class="page-banner text-center">
-                                <h2 class="title">Website & Web application Development</h2>
-                                <ul class="breadcrumb justify-content-center">
+                                <h2 class="title text-black">Website and Web Application Development</h2>
+                                <!-- <ul class="breadcrumb justify-content-center">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Website & Web application Development</li>
-                                </ul>
+                                    <li class="breadcrumb-item active" aria-current="page">Career</li>
+                                </ul> -->
                             </div>
                             <!-- Page Banner Content End -->
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Page Banner End -->
 
-            <section class="section techwix-about-section-04 section-padding">
-                <div class="containers">
-                    <h1 class="text-center">Website & Web Application Development</h1>
-        <p class="txt">Transform Your Ideas into Reality. We specialize in creating <strong>custom websites</strong> and <strong>web applications</strong> tailored to your business needs. From design to deployment, our team ensures your digital presence is robust, scalable, and user-friendly.</p>
+</div>
+<section class="zigzag-section">
+    <div class="container">
+      
+      <!-- Zigzag Block 1 -->
+      <div class="row align-items-center mb-5">
+        
+        <div class="col-md-6 content fade-in-right">
+        <h1>Website Development</h1>
+        
+        <h2>Introduction to Website Development</h2>
+        <p>Website development refers to the process of building and maintaining websites for the internet. It includes aspects such as web design, web content creation, client-side/server-side scripting, and network security configuration.</p>
 
-        <div class="">
-            <div class="row">
-            <h2 class="text-center">Our Services</h2>
-            <div class="col-lg-7" style="margin-top:57px;">
-            <ul class="ull font">
-                <li>Custom Web Development - Clean code, beautiful design, and seamless functionality.</li>
-                <li>Web Application Development - High-performance, fast, secure, and scalable applications.</li>
-                <li>Responsive Design - Perfect across mobile, tablet, and desktop screens.</li>
-                <li>E-Commerce Solutions - Integrated platforms with seamless product management and payment options.</li>
-                <li>Maintenance & Support - Ongoing support to ensure everything runs smoothly.</li>
-            </ul>
-            </div>
-            <div class="col-lg-5">
-                <img src="assets/images/jh.jpg">
-            </div>
+        <h2>Front-end Development</h2>
+        <p>Front-end development involves the part of a website that users interact with directly. Technologies like HTML, CSS, and JavaScript are used to design the layout, style, and functionality of a webpage.</p>
+
         </div>
 
-             </div>
-                </div>
-            </section>
 
-        <!-- Blog End -->
+        <div class="col-md-6 fade-in-left">
+          <img src="https://media.licdn.com/dms/image/D5612AQEhKguQVjXr4g/article-cover_image-shrink_600_2000/0/1693971265825?e=2147483647&v=beta&t=vRAWRIEHIp6sKRbLxQ_QmHTgjmTRYhj8vOLwlhskjzg" alt="Image 1">
+        </div>
+      </div>
 
-        <?php
+      <!-- Zigzag Block 2 -->
+      <div class="row align-items-center mb-5">
+      <div class="col-md-6 fade-in-right">
+          <img src="https://img.freepik.com/premium-vector/web-developer-illustration-concept-flat-illustration-isolated-white-background_701961-2117.jpg" alt="Image 2">
+        </div>
+        <div class="col-md-6 content fade-in-left">
+        <h1>Web Application Development</h1>
+        
+        <h2>What is a Web Application?</h2>
+        <p>A web application is software that runs on a web server and can be accessed through a web browser. Examples include Gmail, Google Docs, and Facebook.</p>
+
+        <h2>Testing and Deployment</h2>
+        <p>Before launching a web application, thorough testing is required to ensure there are no bugs. Once testing is complete, the web application is deployed on a web server for public access.</p>
+        </div>
        
-       include("footer.php");
+      </div>
+
+      
+      
+    </div>
+  </section>
+        <!-- Header End  -->
+     
+        <!-- Testimonials Slider Section -->
+        <section id="testimonials" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-4">What Our Clients Say</h2>
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+
+                        <!-- First Testimonial -->
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <p class="card-text">"Excellent service and fast delivery!"</p>
+                                            <h5 class="card-title">- John Doe</h5>
+                                            <!-- Star Rating -->
+                                            <div class="star-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Second Testimonial -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <p class="card-text">"Highly recommend for anyone looking for quality products."</p>
+                                            <h5 class="card-title">- Jane Smith</h5>
+                                            <!-- Star Rating -->
+                                            <div class="star-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i> <!-- 5 stars -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Third Testimonial -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <p class="card-text">"Great experience overall. Will shop again!"</p>
+                                            <h5 class="card-title">- Sam Johnson</h5>
+                                            <!-- Star Rating -->
+                                            <div class="star-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i> <!-- 3.5 stars -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Logo Slider Section -->
+        <section id="logo-slider" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Our Technologies</h2>
+                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <<div class="carousel-item active">
+                            <div class="d-flex justify-content-around">
+                                <div>
+                                    <img src="assets/images/technology-logo/html.png" alt="Logo 1" class="img-fluid" style="max-height: 100px;">
+                                    <h4 class="text-center">HTML5</h4>
+                                </div>
+                                <div>
+                                    <img src="assets/images/technology-logo/css.png" alt="Logo 2" class="img-fluid" style="max-height: 100px;">
+                                    <h4 class="text-center">CSS3</h4>
+                                </div>
+                                <div>
+                                    <img src="assets/images/technology-logo/angular.png" alt="Logo 3" class="img-fluid" style="max-height: 100px;">
+                                    <h4 class="text-center">Angular</h4>
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-around">
+                            <div>
+                                <img src="assets/images/technology-logo/laravel logo.png" alt="Logo 4" class="img-fluid" style="max-height: 100px;">
+                                <h4 class="text-center">Laravel</h4>
+                            </div>
+                            <div>
+                                <img src="assets/images/technology-logo/node.png" alt="Logo 5" class="img-fluid" style="max-height: 100px;">
+                                <h4 class="text-center">Node.js</h4>
+                            </div>
+                            <div>
+                                <img src="assets/images/technology-logo/php.png" alt="Logo 6" class="img-fluid" style="max-height: 100px;">
+                                <h4 class="text-center">PHP</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-around">
+                            <div>
+                                <img src="assets/images/technology-logo/react.png" alt="Logo 7" class="img-fluid" style="max-height: 100px;">
+                                <h4 class="text-center">React</h4>
+                            </div>
+                            <div>
+                                <img src="assets/images/technology-logo/wordpress.png" alt="Logo 8" class="img-fluid" style="max-height: 100px;">
+                                <h4 class="text-center">WordPress</h4>
+                            </div>
+                            <div>
+                                <img src="assets/images/technology-logo/php.png" alt="Logo 9" class="img-fluid" style="max-height: 100px;">
+                                <h4 class="text-center">PHP</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+
+</body>
+
+
+
+
+
+<?php
+include("footer.php");
 ?>
 
-        <!-- back to top start -->
-        <div class="progress-wrap">
-            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-            </svg>
-        </div>
-        <!-- back to top end -->
+<!-- back to top start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+</div>
+<!-- back to top end -->
+<script>
+    // JavaScript to add scroll-triggered left/right fade-in effect
+    const fadeInLeftElements = document.querySelectorAll('.fade-in-left');
+    const fadeInRightElements = document.querySelectorAll('.fade-in-right');
 
-    </div>
+    const observerOptions = {
+      threshold: 0.1 // Trigger when 10% of the element is visible
+    };
 
-    <!-- JS
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe each element
+    fadeInLeftElements.forEach(el => observer.observe(el));
+    fadeInRightElements.forEach(el => observer.observe(el));
+  </script>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- FontAwesome -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+<!-- JS
     ============================================ -->
-    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
 
-    <!-- Bootstrap JS -->
-    <script src="assets/js/plugins/popper.min.js"></script>
-    <script src="assets/js/plugins/bootstrap.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="assets/js/plugins/popper.min.js"></script>
+<script src="assets/js/plugins/bootstrap.min.js"></script>
 
-    <!-- Plugins JS -->
-    <script src="assets/js/plugins/swiper-bundle.min.js"></script>
-    <script src="assets/js/plugins/aos.js"></script>
-    <script src="assets/js/plugins/waypoints.min.js"></script>
-    <script src="assets/js/plugins/back-to-top.js"></script>
-    <script src="assets/js/plugins/jquery.counterup.min.js"></script>
-    <script src="assets/js/plugins/appear.min.js"></script>
-    <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
-
-
-    <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
+<!-- Plugins JS -->
+<script src="assets/js/plugins/swiper-bundle.min.js"></script>
+<script src="assets/js/plugins/aos.js"></script>
+<script src="assets/js/plugins/waypoints.min.js"></script>
+<script src="assets/js/plugins/back-to-top.js"></script>
+<script src="assets/js/plugins/jquery.counterup.min.js"></script>
+<script src="assets/js/plugins/appear.min.js"></script>
+<script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
 
 
-    <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
+<!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
+
+
+<!-- Main JS -->
+<script src="assets/js/main.js"></script>
 
 </body>
 
 
 <!-- Mirrored from thepixelcurve.com/html/techwix/techwix/blog.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Sep 2024 10:03:49 GMT -->
+
 </html>

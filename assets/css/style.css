@@ -47,7 +47,8 @@
 /*  01. Theme default CSS
 /*----------------------------------------*/
 /*-- Google Font --*/
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;family=Jost:wght@300;400;500&amp;display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+/*@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;family=Jost:wght@300;400;500&amp;display=swap");*/
 /*-- Common Style --*/
 *, *::after, *::before {
   box-sizing: border-box;
@@ -58,8 +59,9 @@
 body {
   font-size: 14px;
   line-height: 1.75;
+font-family: "Titillium Web", sans-serif;
   font-weight: 400;
-  font-family: "Jost", sans-serif;
+  font-style: normal;
   color: #4c4d56;
   outline: none;
   visibility: visible;
@@ -67,6 +69,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: "";
+
 }
 
 body[dir="rtl"] {

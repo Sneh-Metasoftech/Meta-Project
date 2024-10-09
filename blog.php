@@ -33,10 +33,13 @@
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
     <!-- <link rel="stylesheet" href="assets/css/vendor/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css"> -->
+
 
 </head>
 <style>
@@ -55,8 +58,8 @@
 
 
         <!-- Page Banner Start -->
-        <div class="section page-banner-section" style="background-image: url(assets/images/bg/page-banner.jpg);">
-            <div class="shape-1">
+        <div class="section page-banner-section" style="background-image: url(assets/images/bg/ihhh.jpg);">
+            <!-- <div class="shape-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="944px" height="894px">
                     <defs>
                         <linearGradient id="PSgrad_0" x1="88.295%" x2="0%" y1="0%" y2="46.947%">
@@ -91,17 +94,17 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="972.5px" height="970.5px">
                     <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M38.245,381.102 L435.258,28.158 C480.467,-12.32 549.697,-7.964 589.888,37.244 L942.832,434.257 C983.23,479.466 978.955,548.697 933.746,588.888 L536.733,941.832 C491.524,982.23 422.293,977.955 382.103,932.745 L29.158,535.732 C-11.32,490.523 -6.963,421.293 38.245,381.102 Z" />
                 </svg>
-            </div>
+            </div> -->
             <div class="container">
                 <div class="page-banner-wrap">
                     <div class="row">
                         <div class="col-lg-12">
                             <!-- Page Banner Content Start -->
                             <div class="page-banner text-center">
-                                <h2 class="title">Blog Grid</h2>
+                                <h2 class="title text-black" style=" font-family:Titillium Web, sans-serif;font-size:100px;" >Blog</h2>
                                 <ul class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Blog Grid</li>
+                                    <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Blog Grid</li> -->
                                 </ul>
                             </div>
                             <!-- Page Banner Content End -->
@@ -214,14 +217,8 @@
     <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
 
 
-    <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
-
-
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 
 </body>
-
-
-<!-- Mirrored from thepixelcurve.com/html/techwix/techwix/blog.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Sep 2024 10:03:49 GMT -->
 </html>
