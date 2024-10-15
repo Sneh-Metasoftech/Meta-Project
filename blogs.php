@@ -263,6 +263,7 @@ if (isset($_SESSION['loggedin']) && isset($_SESSION['username'])) {
                     <button type="submit" name="submit" class="btn btn-success">Submit</button>
                     <button name="danger" class="btn btn-success"><a href="dashboard.php">Dashboard</a></button>
                     <button name="submit" class="btn btn-danger"><a href="logout.php">Logout </a></button>
+                     <button name="submit" class="btn btn-danger"><a href="admin.php">Comment Admin </a></button>
                  </div>
                 </form>
             </div>

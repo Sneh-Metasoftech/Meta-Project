@@ -9,3 +9,17 @@ include("db.php");
         header("location:dashboard.php?succes=deleted succesfully");
     }
 ?>
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $comment_id = intval($_POST['comment_id']);
+
+    // Delete the comment
+    $sql = "DELETE FROM comments WHERE id = $comment_id";
+    if ($db->query($sql)) {
+        echo "Comment deleted.";
+        header('Location: admin.php');
+    } else {
+        echo "Error: " . $db->error;
+    }
+}
+?>

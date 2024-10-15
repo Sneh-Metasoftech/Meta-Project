@@ -190,36 +190,38 @@
         <h3 class="comment-title">Comments</h3>
 <?php
 // Ensure post_id is set and is an integer
-$post_id = isset($_GET['id']) ? $_GET['id'] : 0;
+$post_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 if ($post_id == 0) {
    die("Invalid post ID.");
 }
 
+
+
 // Process the form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+    // Sanitize input data
+    $name = $db->real_escape_string($_POST['name']);
+    $email = $db->real_escape_string($_POST['email']);
+    $message = $db->real_escape_string($_POST['message']);
+    $post_id = intval($_POST['post_id']); // Ensure it's an integer
 
-    // Sanitize post_id
-    $post_id = $_POST['post_id'];
-
-    // Prepare SQL query to insert form data into the database
-    $sql = "INSERT INTO comments (name, email, message, posts_id) VALUES ('$name', '$email', '$message', '$post_id')";
+    // Prepare SQL query to insert form data with `approved` status as 0 (pending)
+    $sql = "INSERT INTO comments (name, email, message, posts_id, approved) 
+            VALUES ('$name', '$email', '$message', '$post_id', 0)";
 
     if ($db->query($sql) === TRUE) {
         echo "<script>
-        alert('your comment has been submmited successfully');
-                location.href='';
+        alert('Your comment has been submitted and is awaiting approval.');
+        location.href='blog-details.php?id=$post_id';
         </script>";
     } else {
         echo "Error: " . $sql . "<br>" . $db->error;
     }
 }
 
-// Retrieve and display comments for this specific post
-$sql = "SELECT * FROM comments WHERE posts_id = $post_id ORDER BY created_at DESC";
+// Retrieve and display only approved comments for this specific post
+$sql = "SELECT * FROM comments WHERE posts_id = $post_id AND approved = 1 ORDER BY created_at DESC";
 $result = $db->query($sql);
 
 if (!$result) {
@@ -242,9 +244,9 @@ if (!$result) {
         <ul>
             <?php while($row = $result->fetch_assoc()): ?>
                 <li>
-                    <strong>Name:</strong> <?php echo $row['name']; ?> <br>
-                    <strong>Email:</strong> <?php echo $row['email']; ?> <br>
-                    <strong>Message:</strong> <?php echo $row['message']; ?> <br>
+                    <strong>Name:</strong> <?php echo htmlspecialchars($row['name']); ?> <br>
+                    <strong>Email:</strong> <?php echo htmlspecialchars($row['email']); ?> <br>
+                    <strong>Message:</strong> <?php echo htmlspecialchars($row['message']); ?> <br>
                     <em>Submitted on:</em> <?php echo $row['created_at']; ?>
                 </li>
                 <hr>
@@ -255,40 +257,37 @@ if (!$result) {
     <?php endif; ?>
 
     <!-- Comment Form -->
-   
-
-
-
-
-
-<!-- Comment form -->
-<div class="comment-form-wrap">
-    <form action="#" method="POST">
-        <input type="hidden" name="post_id" value="<?php echo $post_id;?>" />
-        <div class="row">
-            <div class="col-md-6">
-                <div class="single-form">
-                    <input class="form-control" type="text" name="name" placeholder="Your Name" required>
+    <div class="comment-form-wrap">
+        <form action="blog-details.php?id=<?php echo $post_id; ?>" method="POST">
+            <input type="hidden" name="post_id" value="<?php echo $post_id;?>" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="single-form">
+                        <input class="form-control" type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="single-form">
+                        <input class="form-control" type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="single-form">
+                        <textarea class="form-control" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-btn">
+                        <button class="btn" type="submit">Submit</button>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="single-form">
-                    <input class="form-control" type="email" name="email" placeholder="Your Email" required>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="single-form">
-                    <textarea class="form-control" name="message" placeholder="Your Message" required></textarea>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="form-btn">
-                    <button class="btn" type="submit">Submit</button>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
+
+</body>
+</html>
+
 
 
         <!-- Commtent Form Wrap End -->

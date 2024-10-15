@@ -6,7 +6,7 @@ include("db.php");
 <html class="no-js" lang="en">
 
 
-<!-- Mirrored from thepixelcurve.com/html/techwix/techwix/blog.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Sep 2024 10:03:46 GMT -->
+
 
 <head>
     <meta charset="utf-8">
@@ -19,7 +19,7 @@ include("db.php");
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
 
     <!-- CSS
-	============================================ -->
+    ============================================ -->
 
     <!-- Icon Font CSS -->
     <link rel="stylesheet" href="assets/css/plugins/all.min.css">
@@ -53,39 +53,133 @@ include("db.php");
         filter: invert(32%) sepia(100%) saturate(5268%) hue-rotate(360deg) brightness(100%) contrast(105%);
     }
 
+.mty{
+    margin-top: 15px;
+}
+
+.hero {
+    padding: 100px 20px;
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    background: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.cta-btn:hover {
+    background: #e55b00;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#about {
+    background: #fff;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+#process .step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#process .icon {
+    flex: 1;
+    text-align: center;
+}
+
+#process .icon img {
+    width: 80px;
+    height: 80px;
+}
+
+#process .content {
+    flex: 3;
+    padding: 20px;
+    text-align: left;
+}
+
+#process .content h3 {
+    margin-bottom: 10px;
+}
 
 
-  .zigzag-section {
-      padding: 50px 0;
-    }
+     .service-section {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
 
-    .zigzag-section .row:nth-child(even) .content {
-      order: 2;
-    }
+        .service-card {
+            perspective: 1000px; /* Define perspective for 3D effect */
+        }
 
-    .zigzag-section img {
-      width: 100%;
-      height: auto;
-    }
+        .service-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
 
-    /* Fade-in animations for left and right */
-    .fade-in-left {
-      opacity: 0;
-      transform: translateX(-50px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
+        .service-card:hover .service-inner {
+            transform: rotateY(180deg); /* Flip the card horizontally on hover */
+        }
 
-    .fade-in-right {
-      opacity: 0;
-      transform: translateX(50px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
+        .service-front, .service-back {
+            position: absolute;
+            width: 100%;
+            backface-visibility: hidden; /* Hide the backside during the flip */
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+        }
 
-    /* Add visible class when in view */
-    .visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
+        .service-front {
+            z-index: 2;
+        }
+
+        .service-back {
+            transform: rotateY(180deg); /* Backside content is rotated */
+            z-index: 1;
+        }
+
+        .service-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .service-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-list li {
+            margin-bottom: 10px;
+        }
 </style>
 
 <body>
@@ -117,53 +211,144 @@ include("db.php");
                 </div>
             </div>
 
-</div>
-<section class="zigzag-section">
-    <div class="container">
-      
-      <!-- Zigzag Block 1 -->
-      <div class="row align-items-center mb-5">
-        
-        <div class="col-md-6 content fade-in-right">
-        <h1>Website Development</h1>
-        
-        <h2>Introduction to Website Development</h2>
-        <p>Website development refers to the process of building and maintaining websites for the internet. It includes aspects such as web design, web content creation, client-side/server-side scripting, and network security configuration.</p>
-
-        <h2>Front-end Development</h2>
-        <p>Front-end development involves the part of a website that users interact with directly. Technologies like HTML, CSS, and JavaScript are used to design the layout, style, and functionality of a webpage.</p>
-
+</div> 
+<div class="container">
+    <h2 class="text-center">Website and Web Application Development</h2>
+    <p class="text-center">In today’s digital age, having a robust online presence is essential for every business. At Meta-Softech Private Limited, we specialize in building high-performance websites and dynamic web applications tailored to your unique business needs.</p>
+</div>   
+   <div class="container">
+    <!-- Development Process Section -->
+    <section id="process">
+        <h2>Our Approach</h2>
+        <div class="step">
+            <div class="icon"><img src="assets/images/technology-logo/Vision.png" alt="Consultation Icon"></div>
+            <div class="content">
+                <h3>Step 1: Understanding Your Vision</h3>
+                <p>We begin by diving deep into your business objectives and target audience to craft a solution that meets your specific goals.</p>
+            </div>
         </div>
 
-
-        <div class="col-md-6 fade-in-left">
-          <img src="https://media.licdn.com/dms/image/D5612AQEhKguQVjXr4g/article-cover_image-shrink_600_2000/0/1693971265825?e=2147483647&v=beta&t=vRAWRIEHIp6sKRbLxQ_QmHTgjmTRYhj8vOLwlhskjzg" alt="Image 1">
+        <div class="step">
+            <div class="icon"><img src="assets/images/technology-logo/idea.png" alt="Planning Icon"></div>
+            <div class="content">
+                <h3>Step 2: Planning & Strategy</h3>
+                <p>Our development roadmap covers every phase of the project, from wireframes to the final product.</p>
+            </div>
         </div>
-      </div>
 
-      <!-- Zigzag Block 2 -->
-      <div class="row align-items-center mb-5">
-      <div class="col-md-6 fade-in-right">
-          <img src="https://img.freepik.com/premium-vector/web-developer-illustration-concept-flat-illustration-isolated-white-background_701961-2117.jpg" alt="Image 2">
+        <div class="step">
+            <div class="icon"><img src="assets/images/technology-logo/ux.png" alt="UX Design Icon"></div>
+            <div class="content">
+                <h3>Step 3: Design & UX</h3>
+                <p>Beautiful, intuitive design that engages users while offering a seamless experience on every device.</p>
+            </div>
         </div>
-        <div class="col-md-6 content fade-in-left">
-        <h1>Web Application Development</h1>
-        
-        <h2>What is a Web Application?</h2>
-        <p>A web application is software that runs on a web server and can be accessed through a web browser. Examples include Gmail, Google Docs, and Facebook.</p>
 
-        <h2>Testing and Deployment</h2>
-        <p>Before launching a web application, thorough testing is required to ensure there are no bugs. Once testing is complete, the web application is deployed on a web server for public access.</p>
+        <!-- Add more steps here as needed -->
+
+    </section>
+     </div>
+   <div class="container service-section">
+        <h1 class="text-center mb-5">Our Services</h1>
+        <div class="row">
+            <!-- Custom Website Development -->
+            <div class="col-md-6">
+                <div class="service-card">
+                    <div class="service-inner">
+                        <!-- Front Side of the Card -->
+                        <div class="service-front">
+                            <h2 class="service-title">Custom Website Development</h2>
+                            <p>Our team of skilled developers and designers works together to create websites that are tailored to your brand's vision.</p>
+                        </div>
+                        <!-- Back Side of the Card -->
+                        <div class="service-back">
+                            <h2 class="service-title">Key Features</h2>
+                            <ul class="service-list">
+                                <li>Responsive design for all devices</li>
+                                <li>SEO-optimized to improve visibility</li>
+                                <li>Scalable architecture for future expansion</li>
+                                <li>Easy-to-navigate UI/UX</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Application Development -->
+            <div class="col-md-6">
+                <div class="service-card">
+                    <div class="service-inner">
+                        <!-- Front Side of the Card -->
+                        <div class="service-front">
+                            <h2 class="service-title">Web Application Development</h2>
+                            <p>We develop highly scalable, secure, and efficient web applications tailored to meet your business objectives.</p>
+                        </div>
+                        <!-- Back Side of the Card -->
+                        <div class="service-back">
+                            <h2 class="service-title">Key Features</h2>
+                            <ul class="service-list">
+                                <li>Custom-built solutions for your business</li>
+                                <li>Cross-browser compatibility</li>
+                                <li>Robust security protocols</li>
+                                <li>Easy third-party integrations (APIs, payment gateways, etc.)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E-Commerce Solutions -->
+            <div class="col-md-6">
+                <div class="service-card">
+                    <div class="service-inner">
+                        <!-- Front Side of the Card -->
+                        <div class="service-front">
+                            <h2 class="service-title">E-Commerce Solutions</h2>
+                            <p>Boost your online sales with our fully integrated e-commerce development services.</p>
+                        </div>
+                        <!-- Back Side of the Card -->
+                        <div class="service-back">
+                            <h2 class="service-title">Key Features</h2>
+                            <ul class="service-list">
+                                <li>Fully customizable e-commerce platforms</li>
+                                <li>Secure payment gateways</li>
+                                <li>Product management systems</li>
+                                <li>User-friendly admin dashboards</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Management Systems (CMS) -->
+            <div class="col-md-6">
+                <div class="service-card">
+                    <div class="service-inner">
+                        <!-- Front Side of the Card -->
+                        <div class="service-front">
+                            <h2 class="service-title">Content Management Systems (CMS)</h2>
+                            <p>Take control of your website's content with our custom CMS development.</p>
+                        </div>
+                        <!-- Back Side of the Card -->
+                        <div class="service-back">
+                            <h2 class="service-title">Key Features</h2>
+                            <ul class="service-list">
+                                <li>Easy-to-use admin interface</li>
+                                <li>Quick content updates</li>
+                                <li>Multi-language support</li>
+                                <li>SEO-friendly structure</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-       
-      </div>
-
-      
-      
     </div>
-  </section>
         <!-- Header End  -->
-     
+  
+
+
         <!-- Testimonials Slider Section -->
         <section id="testimonials" class="py-5 bg-light">
             <div class="container">
@@ -256,19 +441,19 @@ include("db.php");
                 <h2 class="text-center mb-4">Our Technologies</h2>
                 <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <<div class="carousel-item active">
+                        <div class="carousel-item active">
                             <div class="d-flex justify-content-around">
                                 <div>
                                     <img src="assets/images/technology-logo/html.png" alt="Logo 1" class="img-fluid" style="max-height: 100px;">
-                                    <h4 class="text-center">HTML5</h4>
+                                    <h4 class="text-center mty">HTML5</h4>
                                 </div>
                                 <div>
                                     <img src="assets/images/technology-logo/css.png" alt="Logo 2" class="img-fluid" style="max-height: 100px;">
-                                    <h4 class="text-center">CSS3</h4>
+                                    <h4 class="text-center mty">CSS3</h4>
                                 </div>
                                 <div>
                                     <img src="assets/images/technology-logo/angular.png" alt="Logo 3" class="img-fluid" style="max-height: 100px;">
-                                    <h4 class="text-center">Angular</h4>
+                                    <h4 class="text-center mty">Angular</h4>
                                 </div>
                             </div>
                     </div>
@@ -277,15 +462,15 @@ include("db.php");
                         <div class="d-flex justify-content-around">
                             <div>
                                 <img src="assets/images/technology-logo/laravel logo.png" alt="Logo 4" class="img-fluid" style="max-height: 100px;">
-                                <h4 class="text-center">Laravel</h4>
+                                <h4 class="text-center mty">Laravel</h4>
                             </div>
                             <div>
                                 <img src="assets/images/technology-logo/node.png" alt="Logo 5" class="img-fluid" style="max-height: 100px;">
-                                <h4 class="text-center">Node.js</h4>
+                                <h4 class="text-center mty">Node.js</h4>
                             </div>
                             <div>
                                 <img src="assets/images/technology-logo/php.png" alt="Logo 6" class="img-fluid" style="max-height: 100px;">
-                                <h4 class="text-center">PHP</h4>
+                                <h4 class="text-center mty">PHP</h4>
                             </div>
                         </div>
                     </div>
@@ -294,15 +479,15 @@ include("db.php");
                         <div class="d-flex justify-content-around">
                             <div>
                                 <img src="assets/images/technology-logo/react.png" alt="Logo 7" class="img-fluid" style="max-height: 100px;">
-                                <h4 class="text-center">React</h4>
+                                <h4 class="text-center mty">React</h4>
                             </div>
                             <div>
                                 <img src="assets/images/technology-logo/wordpress.png" alt="Logo 8" class="img-fluid" style="max-height: 100px;">
-                                <h4 class="text-center">WordPress</h4>
+                                <h4 class="text-center mty">WordPress</h4>
                             </div>
                             <div>
                                 <img src="assets/images/technology-logo/php.png" alt="Logo 9" class="img-fluid" style="max-height: 100px;">
-                                <h4 class="text-center">PHP</h4>
+                                <h4 class="text-center mty">PHP</h4>
                             </div>
                         </div>
                     </div>
@@ -357,6 +542,22 @@ include("footer.php");
     // Observe each element
     fadeInLeftElements.forEach(el => observer.observe(el));
     fadeInRightElements.forEach(el => observer.observe(el));
+//css animations
+document.addEventListener('DOMContentLoaded', function() {
+    const steps = document.querySelectorAll('.step');
+
+    // Adding a scroll event listener for animations
+    window.addEventListener('scroll', () => {
+        steps.forEach(step => {
+            const rect = step.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                step.classList.add('animate');
+            }
+        });
+    });
+});
+
+    
   </script>
 
 </div>
@@ -385,7 +586,6 @@ include("footer.php");
 <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
 
 
-<!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
 
 
 <!-- Main JS -->
@@ -394,6 +594,5 @@ include("footer.php");
 </body>
 
 
-<!-- Mirrored from thepixelcurve.com/html/techwix/techwix/blog.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Sep 2024 10:03:49 GMT -->
 
 </html>
