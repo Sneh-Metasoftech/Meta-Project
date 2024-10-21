@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -11,7 +12,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
 
     <!-- CSS
-	============================================ -->
+    ============================================ -->
 
     <!-- Icon Font CSS -->
     <link rel="stylesheet" href="assets/css/plugins/all.min.css">
@@ -26,11 +27,272 @@
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
+    <!-- <link rel="stylesheet" href="assets/css/vendor/plugins.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css"> -->
 
 </head>
+<style>
+    .sp{
+        font-size:small;
+    }
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 50px !important;
+    margin-left: -335px;
+}
 
+.btn-primary {
+     background-color:#0040dab3 !important;
+    
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background-color: #086ad8 !important;
+    color:white;
+}
+
+.btn-secondary {
+    background-color:#0040dab3 !important;
+    border: 2px solid #1f5aea !important;
+    color: white !important;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-secondary:hover {
+    background-color: #086ad8 !important;
+    color:white;
+}
+ #more, #additionalText {
+    display: none; /* Initially hide the additional content */
+}
+       /* Basic container adjustments */
+       .techwix-service-section-03 {
+            background-image: url(assets/images/bg/service-bg3.jpg);
+            padding: 50px 0;
+        }
+
+        /* Smaller box container */
+        .service-wrap-03 .row {
+            --bs-gutter-y: 1.5rem;
+        }
+
+        /* Smaller service box */
+        .service-item-03 {
+            width: 200px;
+            height: 250px;
+            perspective: 1000px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        /* Flip effect */
+        .service-item-03 .service-content,
+        .service-item-03 .service-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            transition: transform 0.6s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Front of the flip box */
+        .service-item-03 .service-content {
+            background-color: #ffffff;
+            z-index: 2;
+            transform: rotateY(0deg);
+        }
+
+        /* Back of the flip box */
+        .service-item-03 .service-back {
+            background-color: #f5f5f5;
+            transform: rotateY(180deg);
+        }
+
+        /* Hover flip effect */
+        .service-item-03:hover .service-content {
+            transform: rotateY(180deg);
+        }
+
+        .service-item-03:hover .service-back {
+            transform: rotateY(360deg);
+        }
+
+        /* Image adjustment */
+        .service-item-03 img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        /* Hide Read More initially */
+        .service-item-03 .read-more {
+            display: none;
+        }
+
+        /* Show Read More on the back after flip */
+        .service-back .read-more {
+            display: block;
+            margin-top: 15px;
+        }
+
+        /* Modal styles */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7); /* Modal background */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+
+  width: 35% !important; /* Adjust width */
+  position: relative;
+  box-shadow: 0px 6px 27px 7px rgb(8 106 216)!important;
+  animation: slideIn 0.5s ease; /* Adding animation */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.close:hover {
+  transform: rotate(90deg); /* Animated close button */
+  color: red;
+}
+
+/* Button hover effect */
+.btn-secondary:hover {
+  background-color: #007bff;
+  color: #fff;
+  transition: 0.3s;
+}
+  /* Preloader container styling */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Shrinking circle animation */
+        .shrink-circle {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            border-radius: 50%;
+            animation: shrink 1.5s infinite ease-in-out;
+        }
+
+        /* Animation keyframes */
+        @keyframes shrink {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .fot{
+                box-shadow: 0px 6px 27px 7px rgb(8 106 216)!important;
+                width: 70%;
+                padding: 4px 10px;
+                margin-left: 188px!important;
+        }
+        @media only screen and (max-width: 991px) {
+            .fot{
+                width: 81%;
+                margin-left: 50px!important;
+            }
+        }
+
+
+
+          .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form input[type="tel"],
+        .contact-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+      
+
+        .contact-form button:hover {
+            background-color: #009acd;
+        }
+
+</style>
 <body>
+  <div id="preloader">
+        <div class="shrink-circle"></div>
+    </div>
+<!-- Preloader End -->
+  
 
     <div class="main-wrapper">
           <!-- Header Start  -->
@@ -38,6 +300,70 @@
          include("header.php");
          ?>
  <!-- Header End  -->
+<?php
+// Import PHPMailer classes into the global namespace
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+    
+if (isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $subject = $_POST['sub'];
+    $message = $_POST['msg'];
+
+    // Load Composer's autoloader
+    require 'PHP-Mailer/Exception.php';
+    require 'PHP-Mailer/PHPMailer.php';
+    require 'PHP-Mailer/SMTP.php';
+
+    // Create an instance; passing `true` enables exceptions
+    $mail = new PHPMailer(true);
+
+  try {
+    // Server settings
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.gmail.com';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'tripathisneh8858@gmail.com';
+    $mail->Password   = 'guttcodwkyiinwoe';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port       = 465;
+
+    // Recipients
+    $mail->setFrom('tripathisneh786@gmail.com', 'Meta Softech Private Limited');
+    $mail->addAddress('tripathisneh8858@gmail.com', 'Meta Softech');
+
+    // Content
+    $mail->isHTML(true);
+    $mail->Subject = $subject;
+    $mail->Body    = "Sender Name: $name <br> Sender Email: $email <br> Phone No: $phone <br> Message: $message";
+
+    // Send email
+    $mail->send();
+
+    // Instead of showing a success message directly, redirect the user
+    echo '<script>
+        Swal.fire({
+            title: "Success!",
+            text: "Your request has been submitted successfully!",
+            icon: "success",
+            showConfirmButton: true
+        });
+
+        setTimeout(function () {
+            // Redirect to the same page without query parameters
+            window.location.href = window.location.href.split("?")[0]; 
+        }, 5000); // Wait 5 seconds before redirecting
+    </script>';
+
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+
+}
+?>
+
 
         <!-- Hero Start -->
         <div class="section techwix-hero-section-03 d-flex align-items-center" style="background-image: url(assets/images/hero-bg3.jpg);">
@@ -47,109 +373,273 @@
                     <div class="col-lg-6">
                         <!-- Hero Content Start -->
                         <div class="hero-content">
-                            <h3 class="sub-title" data-aos-delay="600" data-aos="fade-up">Technology Releted Consultancy</h3>
+                           
                             <h2 class="title" data-aos="fade-up" data-aos-delay="800">We transform ideas into technology</h2>
                             <p data-aos="fade-up" data-aos-delay="900">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
                             <div class="hero-btn" data-aos="fade-up" data-aos-delay="1000">
                                 <!-- <a class="btn" href="about.php">Read More</a> -->
                             </div>
+       
+
                         </div>
                         <!-- Hero Content End -->
+               
                     </div>
+                    <div class="buttons">
+            <a href="It-consultant.php" class="btn-primary">Explore innovative IT solutions  <i class="fa-thin  fa fa-arrow-right sp"></i></a>
+            <a href="#" class="btn-secondary">Reach out for IT consulting services <i class="fa-thin  fa fa-arrow-down sp"></i></a>
+        </div>
                 </div>
+            
             </div>
         </div>
         <!-- Hero End -->
-
-        <!-- Service Start -->
-        <div class="section techwix-service-section-03" style="background-image: url(assets/images/bg/service-bg3.jpg);">
-            <div class="container">
-                <!-- Service Wrap Start -->
-                <div class="service-wrap-03">
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6">
-                            <!-- Service Item Start -->
-                            <div class="service-item-03">
-                            <div class="choose-us-img">
-                                        <img src="assets/images/counter-1.png" alt="">
-                                    </div>
-    <div class="service-content">
-        <h3 class="title">Infrastructure Technology</h3>
-        <p class="short-description">IT infrastructure encompasses the hardware, software, network resources, and services required to manage and support</p>
-        <p class="full-description" style="display: none;">
-        IT infrastructure encompasses the hardware, software, network resources, and services required to manage and support an organization's IT environment. This includes servers, storage systems, networking equipment, operating systems, and data centers. It ensures reliable connectivity, data management, and application performance. Effective IT infrastructure is crucial for operational efficiency, scalability, and security, enabling seamless business operations and supporting digital transformation initiatives.
-        </p>
-        <div class="read-more">
-            <a href="#" class="toggle-description" data-show-text="Read More" data-hide-text="Read Less"><i class="fas fa-plus"></i> Read More</a>
+        
+ 
+ <!-- Modal Popup -->
+<!-- Modal Popup -->
+<!-- Modal Popup -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="container">
+            <!-- Registration Form Start -->
+            <div class="contact-form">
+               <div class="heading-wrap text-center">
+                  <span class="sub-title">Request a quote</span>
+                  <h3 class="title">How May We Help You!</h3>
+                </div>
+              <form action="#" method="post"> <!-- Make sure action points to your PHP script -->
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <!-- Single Form Start -->
+                      <div class="single-form">
+                        <input type="text" placeholder="Name *" name="name" required>
+                      </div>
+                      <!-- Single Form End -->
+                    </div>
+                    <div class="col-sm-6">
+                      <!-- Single Form Start -->
+                      <div class="single-form">
+                        <input type="email" placeholder="Email *" name="email" required>
+                      </div>
+                      <!-- Single Form End -->
+                    </div>
+                    <div class="col-sm-12">
+                      <!-- Single Form Start -->
+                      <div class="single-form">
+                        <input type="tel" placeholder="Phone" maxlength="10" name="phone" required>
+                      </div>
+                      <!-- Single Form End -->
+                    </div>
+                    <div class="col-sm-12">
+                      <!-- Single Form Start -->
+                      <div class="single-form">
+                        <input type="text" placeholder="Subject" name="sub" required>
+                      </div>
+                      <!-- Single Form End -->
+                    </div>
+                    <div class="col-sm-12">
+                      <!-- Single Form Start -->
+                      <div class="single-form">
+                        <textarea placeholder="Write A Message" name="msg"></textarea>
+                      </div>
+                      <!-- Single Form End -->
+                    </div>
+                    <div class="col-sm-12">
+                      <!--  Single Form Start -->
+                      <div class="form-btn text-center">
+                        <button class="btn" type="submit" name="submit">Send Message</button>
+                      </div>
+                      <!--  Single Form End -->
+                    </div>
+                  </div>
+                </form>
+                
+            </div>
+            <!-- Registration Form End -->
         </div>
     </div>
 </div>
-                            <!-- Service Item End -->
+<!-- Service Section Start -->
+<div class="section techwix-service-section-03">
+    <div class="container">
+        <div class="service-wrap-03">
+            <div class="row">
+                <div class="col-xl-3 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item-03">
+                        <!-- Front Content -->
+                        <div class="service-content">
+                            <img src="assets/images/counter-1.png" alt="Infrastructure Technology">
+                            <h3 class="title">Infrastructure Technology</h3>
                         </div>
-                        <div class="col-xl-3 col-md-6">
-                            <!-- Service Item Start -->
-                            <div class="service-item-03">
-                            <div class="choose-us-img">
-                                        <img src="assets/images/ser-icon12.png" alt="">
+                        <!-- Back Content (Visible on Flip) -->
+                        <div class="service-back">
+                            <h3 class="title">Infrastructure Technology</h3>
+                            <div class="read-more">
+                                <a href="infra.php"><i class="fas fa-plus"></i> Read More</a>
                             </div>
-    <div class="service-content">
-        <h3 class="title">Blockchain System</h3>
-        <p class="short-description">A blockchain system is a decentralized digital ledger that records transactions across multiple computers in a secure and immutable.</p>
-        <p class="full-description" style="display: none;">
-        A blockchain system is a decentralized digital ledger that records transactions across multiple computers in a secure and immutable.manner. Each transaction is grouped into blocks and linked in chronological order, creating a chain. This technology ensures transparency, security, and tamper-resistance, making it ideal for applications such as cryptocurrency, supply chain management, and smart contracts.
-        </p>
-        <div class="read-more">
-            <a href="#" class="toggle-description" data-show-text="Read More" data-hide-text="Read Less"><i class="fas fa-plus"></i> Read More</a>
-        </div>
-    </div>
-</div>
-                            <!-- Service Item End -->
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <!-- Service Item Start -->
-                            <div class="service-item-03">
-                            <div class="choose-us-img">
-                                        <img src="assets/images/counter-2.png" alt="">
-                                    </div>
-    <div class="service-content">
-        <h3 class="title">Data Managment</h3>
-        <p class="short-description">Data management encompasses the practices and technologies used to collect, store, organize, and protect data throughout its lifecycle.</p>
-        <p class="full-description" style="display: none;">
-        Data management encompasses the practices and technologies used to collect, store, organize, and protect data throughout its lifecycle.This includes data governance, quality assurance, integration, and security measures. Effective data management ensures that data is accurate, accessible, and secure, facilitating informed decision-making and operational efficiency. By establishing protocols and systems for handling data, organizations can optimize their data assets and maintain regulatory compliance.
-        </p>
-        <div class="read-more">
-            <a href="#" class="toggle-description" data-show-text="Read More" data-hide-text="Read Less"><i class="fas fa-plus"></i> Read More</a>
-        </div>
-    </div>
-</div>
-                            <!-- Service Item End -->
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <!-- Service Item Start -->
-                            <div class="service-item-03">
-    <div class="service-img">
-        <img src="assets/images/ser-icon9.png" alt="">
-    </div>
-    <div class="service-content">
-        <h3 class="title">IT Consultancy</h3>
-        <p class="short-description">An IT consultancy provides expert guidance to businesses in optimizing their technology strategies Consultants assess current systems</p>
-        <p class="full-description" style="display: none;">
-        An IT consultancy provides expert guidance to businesses in optimizing their technology strategies. Consultants assess current systems, identify inefficiencies, and offer tailored solutions for improvements. Services often include IT infrastructure design, cybersecurity, cloud migration, and software integration. Their goal is to enhance operational efficiency, reduce costs, and support digital transformation.
-        </p>
-        <div class="read-more">
-            <a href="#" class="toggle-description" data-show-text="Read More" data-hide-text="Read Less"><i class="fas fa-plus"></i> Read More</a>
-        </div>
-    </div>
-</div>
-                            <!-- Service Item End -->
                         </div>
                     </div>
+                    <!-- Service Item End -->
                 </div>
-                <!-- Service Wrap End -->
+                <div class="col-xl-3 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item-03">
+                        <!-- Front Content -->
+                        <div class="service-content">
+                            <img src="assets/images/ser-icon12.png" alt="Blockchain System">
+                            <h3 class="title">Blockchain System</h3>
+                        </div>
+                        <!-- Back Content -->
+                        <div class="service-back">
+                            <h3 class="title">Blockchain System</h3>
+                            <div class="read-more">
+                                <a href="blockchain.php"><i class="fas fa-plus"></i> Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item-03">
+                        <!-- Front Content -->
+                        <div class="service-content">
+                            <img src="assets/images/counter-2.png" alt="Data Management">
+                            <h3 class="title">Data Management</h3>
+                        </div>
+                        <!-- Back Content -->
+                        <div class="service-back">
+                            <h3 class="title">Data Management</h3>
+                            <div class="read-more">
+                                <a href="data-management.php"><i class="fas fa-plus"></i> Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item-03">
+                        <!-- Front Content -->
+                        <div class="service-content">
+                            <img src="assets/images/ser-icon9.png" alt="IT Consultancy">
+                            <h3 class="title">IT Consultancy</h3>
+                        </div>
+                        <!-- Back Content -->
+                        <div class="service-back">
+                            <h3 class="title">IT Consultancy</h3>
+                            <div class="read-more">
+                                <a href="It-consultant.php"><i class="fas fa-plus"></i> Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                </div>
             </div>
         </div>
-        <!-- Service End -->
+    </div>
+</div>
+<!-- Service Section End -->
 
+<!-- Service Section (Newly Added) Start -->
+<div class="section techwix-service-section-03">
+    <div class="container" style="    position: absolute;
+    left: 0;
+    right: 0;
+    bottom:0;
+    top:1381px;" >
+        <!-- Service Wrap Start -->
+        <div class="service-wrap-03">
+            <div class="row" style="--bs-gutter-y: 1.0rem;">
+                <div class="col-xl-3 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item-03">
+                        <!-- Front Content -->
+                        <div class="service-content">
+                            <div class="choose-us-img">
+                                <img src="assets/images/counter-3.png" alt="">
+                            </div>
+                            <h3 class="title">Data Science</h3>
+                        </div>
+                        <!-- Back Content -->
+                        <div class="service-back">
+                            <h3 class="title">Data Science</h3>
+                            <div class="read-more">
+                                <a href="#"><i class="fas fa-plus"></i> Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item-03">
+                        <!-- Front Content -->
+                        <div class="service-content">
+                            <div class="choose-us-img">
+                                <img src="assets/images/ser-icon10.png" alt="">
+                            </div>
+                            <h3 class="title">IT Security</h3>
+                        </div>
+                        <!-- Back Content -->
+                        <div class="service-back">
+                            <h3 class="title">IT Security</h3>
+                            <div class="read-more">
+                                <a href="#"><i class="fas fa-plus"></i> Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item-03">
+                        <!-- Front Content -->
+                        <div class="service-content">
+                            <div class="choose-us-img">
+                                <img src="assets/images/ser-icon21.png" alt="">
+                            </div>
+                            <h3 class="title">IT Management</h3>
+                        </div>
+                        <!-- Back Content -->
+                        <div class="service-back">
+                            <h3 class="title">IT Management</h3>
+                            <div class="read-more">
+                                <a href="it-management.php"><i class="fas fa-plus"></i> Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item-03">
+                        <!-- Front Content -->
+                        <div class="service-content">
+                            <div class="service-img">
+                                <img src="assets/images/ser-icon22.png" alt="">
+                            </div>
+                            <h3 class="title">Data Securet</h3>
+                        </div>
+                        <!-- Back Content -->
+                        <div class="service-back">
+                            <h3 class="title">Data Securet</h3>
+                            <div class="read-more">
+                                <a href="#" class="toggle-description" data-show-text="Read More" data-hide-text="Read Less"><i class="fas fa-plus"></i> Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                </div>
+            </div>
+        </div>
+        <!-- Service Wrap End -->
+    </div>
+</div>
+<!-- Service Section (Newly Added) End -->
 
 
         <!-- About Start -->
@@ -166,9 +656,25 @@
                                     <h3 class="sub-title">Who we are</h3>
                                     <h2 class="title">Highly Tailored IT Design, Management & Support Services.</h2>
                                 </div>
-                                <p class="text">Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible freelance talent for all your software development needs.</p>
+                                <p class="text">
+    We are a dynamic IT consulting and software development company committed to delivering innovative and tailored technology solutions. Our mission is to empower businesses by transforming their ideas into high-quality software products and enhancing their digital presence through expert IT consulting services.
+</p>
+<div id="hiddenContent">
+    <p class="text" id="text">
+        With a team of experienced developers, business analysts, and tech consultants, we offer a unique blend of technical expertise and industry knowledge. From startups to established enterprises, we collaborate closely with our clients to understand their goals and challenges, providing customized solutions that drive growth, 
+        <span id="dots"> </span><span id="more" style="display: none;">Our expertise spans across a range of industries and technologies, ensuring that we remain at the forefront of the rapidly evolving tech landscape. We pride ourselves on delivering reliable, scalable, and secure solutions that meet the specific needs of each client.
+    
+    
+        At the heart of our approach is a dedication to agility, collaboration, and excellence. We believe in building long-term partnerships with our clients, ensuring their success through continuous support, cutting-edge technology, and a commitment to delivering results that exceed expectations. Whether you're looking to optimize your IT infrastructure, develop custom software, or streamline your operations, we are here to guide you through every step of the digital transformation journey.
+        </span>
+        <a onclick="readMore()" id="readMoreBtn" style="color:#086ad8; text-decoration :underline">Read more</a>
+    </p>
+</div>
+
+
+                              
                                 <!-- About Author Info Wrap Start -->
-                                <div class="about-author-info-wrap">
+                                <!-- <div class="about-author-info-wrap">
                                     <div class="about-author">
                                         <img src="assets/images/sign.png" alt="">
                                         <h3 class="name text-center">Amit Ramteke</h3>
@@ -178,7 +684,7 @@
                                         <p>Call to ask any question </p>
                                         <h3 class="number">07714919414</h3>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- About Author Info Wrap End -->
                             </div>
                             <!-- About Content Wrap End -->
@@ -190,13 +696,14 @@
                                     <a class="popup-video" href="https://www.youtube.com/watch?time_continue=3&amp;v=_X0eYtY8T_U"><i class="fas fa-play"></i></a>
                                 </div>
                                 <div class="about-img about-img-big">
-                                    <img src="assets/images/about-big2.jpg" alt="">
+                                    <img src="assets/images/technology-logo/web1.jpeg" alt="">
                                 </div>
                                 <div class="about-img about-img-sm">
-                                    <img src="assets/images/about-sm2.jpg" alt="">
+                                    <img src="assets/images/technology-logo/web2.jpeg" alt="">
                                 </div>
                             </div>
                             <!-- About Image Wrap End -->
+                          
                         </div>
                     </div>
                 </div>
@@ -207,7 +714,7 @@
 
         <!-- Counter Start -->
         <div class="section techwix-counter-section-02">
-            <div class="container">
+            <div class="container" style="padding-top: 50px;">
                 <div class="counter-wrap">
                     <div class="row">
                         <div class="col-xl-3 col-md-6">
@@ -794,7 +1301,7 @@
         <!-- Blog End -->
       
           <!-- footer Start -->
-            <?php
+          <?php
                 include("footer.php");
             ?>
              <!-- footer End -->
@@ -809,6 +1316,61 @@
 
     </div>
 <script>
+    // Get modal element
+    // Check if the form was already submitted in this session
+if (!sessionStorage.getItem('formSubmitted')) {
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Show success message
+        Swal.fire({
+            title: "Success!",
+            text: "Your request has been submitted successfully!",
+            icon: "success",
+            showConfirmButton: true
+        });
+
+        // Set form submission flag
+        sessionStorage.setItem('formSubmitted', 'true');
+
+        // Clear the form inputs
+        form.reset();
+
+        // Redirect after 5 seconds
+        setTimeout(function () {
+            window.location.href = window.location.href.split("?")[0];
+        }, 5000);
+    });
+}
+
+// Optional: Clear form submission flag when reloading the page or opening the form again
+window.onload = function() {
+    sessionStorage.removeItem('formSubmitted'); // Clear the submission flag if you want
+};
+
+var modal = document.getElementById("contactModal");
+// Get the button that opens the modal
+var btn = document.querySelector(".btn-secondary");
+// Get the <span> element that closes the modal
+var span = document.querySelector(".close");
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
 //     document.addEventListener('DOMContentLoaded', function () {
 //     const toggleLinks = document.querySelectorAll('.toggle-description');
 
@@ -833,40 +1395,30 @@
 // });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const toggleLinks = document.querySelectorAll('.toggle-description');
 
-    toggleLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
 
-            // Get the service-content element of the clicked link
-            const serviceContent = this.closest('.service-content');
-            const shortDescription = serviceContent.querySelector('.short-description');
-            const fullDescription = serviceContent.querySelector('.full-description');
 
-            // Close all other expanded sections
-            document.querySelectorAll('.service-content').forEach(content => {
-                if (content !== serviceContent) {
-                    content.querySelector('.full-description').style.display = 'none';
-                    content.querySelector('.short-description').style.display = 'block';
-                    content.querySelector('.toggle-description').innerHTML = '<i class="fas fa-plus"></i> Read More';
-                }
-            });
+function readMore() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var additionalText = document.getElementById("additionalText");
+    var btnText = document.getElementById("readMoreBtn");
 
-            // Toggle the clicked section
-            if (fullDescription.style.display === 'none' || fullDescription.style.display === '') {
-                fullDescription.style.display = 'block';
-                shortDescription.style.display = 'none';
-                this.innerHTML = '<i class="fas fa-minus"></i> Read Less';
-            } else {
-                fullDescription.style.display = 'none';
-                shortDescription.style.display = 'block';
-                this.innerHTML = '<i class="fas fa-plus"></i> Read More';
-            }
-        });
-    });
-});
+    if (dots.style.display === "none") {
+        // Collapse the text
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+        additionalText.style.display = "none"; // Hide additional text
+    } else {
+        // Expand the text
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+        additionalText.style.display = "block"; // Show additional text
+    }
+}
+
 </script>
     <!-- JS
     ============================================ -->
@@ -895,6 +1447,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </body>
 
-
-<!-- Mirrored from thepixelcurve.com/html/techwix/techwix/index .php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Sep 2024 12:31:24 GMT -->
 </html>

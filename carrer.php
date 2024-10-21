@@ -31,8 +31,7 @@
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
     <!-- <link rel="stylesheet" href="assets/css/vendor/plugins.min.css">
@@ -306,13 +305,13 @@ if(isset($_POST['submit'])){
            $mail->isSMTP();                                            //Send using SMTP
            $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-           $mail->Username   = 'tripathisneh786@gmail.com';                     //SMTP username
-           $mail->Password   = 'hhrkkkvdjqwyzhkz';                               //SMTP password
+           $mail->Username   = 'tripathisneh8858@gmail.com';                     //SMTP username
+           $mail->Password   = 'guttcodwkyiinwoe';                               //SMTP password
            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
            $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
        
            //Recipients
-           $mail->setFrom('snehtripathisonti28@gmail.com', 'Meta Softech Private Limited');
+           $mail->setFrom('tripathisneh786@gmail.com', 'Meta Softech Private Limited');
            $mail->addAddress('tripathisneh8858@gmail.com', 'Meta Softech');     //Add a recipient
            // $mail->addAddress('ellen@example.com');               //Name is optional
            // $mail->addReplyTo('info@example.com', 'Information');
@@ -332,17 +331,19 @@ if(isset($_POST['submit'])){
            $mail->send();
            // echo 'Message has been sent';
        
+    echo '<script>
+    Swal.fire({
+        title: "Success!",
+        text: "Your request has been submitted successfully!",
+        icon: "success",
+        showConfirmButton: true
+    });
 
-               echo '<script>
-                    Swal.fire({
-                    title: "Success!",
-                    text: "your request has been Submmited Sucessfully !",
-                    icon: "success",
-                    showConfirmButton: true,
-                    location.href:" ";
-                    });
-               </script>';
- 
+    setTimeout(function () {
+        location.replace(location.href); // This will reload the page without resubmitting the form
+    }, 5000); // 25000 milliseconds = 25 seconds
+</script>
+';
               
         
        } catch (Exception $e) {
