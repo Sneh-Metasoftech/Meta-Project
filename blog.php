@@ -6,7 +6,6 @@
 <html class="no-js" lang="en">
 
 
-<!-- Mirrored from thepixelcurve.com/html/techwix/techwix/blog.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Sep 2024 10:03:46 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -18,7 +17,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
 
     <!-- CSS
-	============================================ -->
+    ============================================ -->
 
     <!-- Icon Font CSS -->
     <link rel="stylesheet" href="assets/css/plugins/all.min.css">
@@ -32,13 +31,6 @@
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-    <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
-    <!-- <link rel="stylesheet" href="assets/css/vendor/plugins.min.css">
-    <link rel="stylesheet" href="assets/css/style.min.css"> -->
 
 
 </head>
@@ -58,7 +50,7 @@
 
 
         <!-- Page Banner Start -->
-        <div class="section page-banner-section" style="background-image: url(assets/images/bg/ihhh.jpg);">
+        <div class="section page-banner-section" style="background-image: url(assets/images/bg/page-banner.jpg);">
             <!-- <div class="shape-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="944px" height="894px">
                     <defs>
@@ -101,10 +93,10 @@
                         <div class="col-lg-12">
                             <!-- Page Banner Content Start -->
                             <div class="page-banner text-center">
-                                <h2 class="title text-black" style=" font-family:Titillium Web, sans-serif;font-size:100px;" >Blog</h2>
+                                <h2 class="title">Blog Grid</h2>
                                 <ul class="breadcrumb justify-content-center">
-                                    <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Blog Grid</li> -->
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Blog Grid</li>
                                 </ul>
                             </div>
                             <!-- Page Banner Content End -->
@@ -123,7 +115,7 @@
                     <?php
                 
                 $selQB = "SELECT * FROM `post` order by id desc";
-                $resQB = mysqli_query($db,$selQB);
+                $resQB =mysqli_query($db,$selQB);
                 if(mysqli_num_rows($resQB)>0){
                     while($row = mysqli_fetch_assoc($resQB)){
                           $post_id = $row['id'];
@@ -215,6 +207,9 @@
     <script src="assets/js/plugins/jquery.counterup.min.js"></script>
     <script src="assets/js/plugins/appear.min.js"></script>
     <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+
+
+   
 
 
     <!-- Main JS -->

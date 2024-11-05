@@ -29,6 +29,8 @@
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icon.min.css">
     <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
     <!-- <link rel="stylesheet" href="assets/css/vendor/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css"> -->
@@ -259,33 +261,69 @@
                 padding: 4px 10px;
                 margin-left: 188px!important;
         }
-        @media only screen and (max-width: 991px) {
-            .fot{
-                width: 81%;
-                margin-left: 50px!important;
-            }
+
+
+
+
+       .contact-form {
+            background-color: #fff;
+               border-radius: 8px;
+    padding: 15px;
+    width: 100%;
+    margin: 0 auto;
         }
-
-
-
-          .contact-form input[type="text"],
-        .contact-form input[type="email"],
-        .contact-form input[type="tel"],
-        .contact-form input[type="password"] {
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .single-form {
+            margin-bottom: 15px;
+        }
+        .single-form input, 
+        .single-form textarea, 
+        .single-form select {
             width: 100%;
             padding: 10px;
-            margin: 8px 0;
-            box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 14px;
+        }
+        .single-form textarea {
+            height: 100px;
+        }
+        .form-btn {
+            text-align: center;
+        }
+        .form-btn button {
+            background: linear-gradient(to right, #1e90ff, #00bfff);
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-btn button:hover {
+            background: linear-gradient(to right, #00bfff, #1e90ff);
+        }
+        .phone-container {
+            display: flex;
+        }
+        .phone-container select {
+            width: 30%;
+            margin-right: 5px;
+        }
+        .phone-container input {
+            width: 70%;
         }
 
-      
-
-        .contact-form button:hover {
-            background-color: #009acd;
-        }
-
+        select option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 </style>
 <body>
   <div id="preloader">
@@ -320,47 +358,46 @@ if (isset($_POST['submit'])) {
     // Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
 
-  try {
-    // Server settings
-    $mail->isSMTP();
-    $mail->Host       = 'smtp.gmail.com';
-    $mail->SMTPAuth   = true;
-    $mail->Username   = 'tripathisneh8858@gmail.com';
-    $mail->Password   = 'guttcodwkyiinwoe';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port       = 465;
+    try {
+        // Server settings
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'tripathisneh8858@gmail.com';
+        $mail->Password   = 'guttcodwkyiinwoe';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port       = 465;
 
-    // Recipients
-    $mail->setFrom('tripathisneh786@gmail.com', 'Meta Softech Private Limited');
-    $mail->addAddress('tripathisneh8858@gmail.com', 'Meta Softech');
+        // Recipients
+        $mail->setFrom('tripathisneh786@gmail.com', 'Meta Softech Private Limited');
+        $mail->addAddress('tripathisneh8858@gmail.com', 'Meta Softech');
 
-    // Content
-    $mail->isHTML(true);
-    $mail->Subject = $subject;
-    $mail->Body    = "Sender Name: $name <br> Sender Email: $email <br> Phone No: $phone <br> Message: $message";
+        // Content
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body    = "Sender Name: $name <br> Sender Email: $email <br> Phone No: $phone <br> Message: $message";
 
-    // Send email
-    $mail->send();
+        // Send email
+        $mail->send();
 
-    // Instead of showing a success message directly, redirect the user
-    echo '<script>
-        Swal.fire({
-            title: "Success!",
-            text: "Your request has been submitted successfully!",
-            icon: "success",
-            showConfirmButton: true
-        });
+        // Instead of PHP header, use JavaScript to redirect after showing success message
+ echo '<script>
+    Swal.fire({
+        title: "Success!",
+        text: "Your request has been submitted successfully!",
+        icon: "success",
+        showConfirmButton: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = window.location.pathname; // Reload the page
+        }
+    });
+</script>';
 
-        setTimeout(function () {
-            // Redirect to the same page without query parameters
-            window.location.href = window.location.href.split("?")[0]; 
-        }, 5000); // Wait 5 seconds before redirecting
-    </script>';
 
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
-
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
 }
 ?>
 
@@ -404,60 +441,44 @@ if (isset($_POST['submit'])) {
         <span class="close">&times;</span>
         <div class="container">
             <!-- Registration Form Start -->
-            <div class="contact-form">
-               <div class="heading-wrap text-center">
-                  <span class="sub-title">Request a quote</span>
-                  <h3 class="title">How May We Help You!</h3>
-                </div>
-              <form action="#" method="post"> <!-- Make sure action points to your PHP script -->
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- Single Form Start -->
-                      <div class="single-form">
-                        <input type="text" placeholder="Name *" name="name" required>
-                      </div>
-                      <!-- Single Form End -->
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- Single Form Start -->
-                      <div class="single-form">
-                        <input type="email" placeholder="Email *" name="email" required>
-                      </div>
-                      <!-- Single Form End -->
-                    </div>
-                    <div class="col-sm-12">
-                      <!-- Single Form Start -->
-                      <div class="single-form">
-                        <input type="tel" placeholder="Phone" maxlength="10" name="phone" required>
-                      </div>
-                      <!-- Single Form End -->
-                    </div>
-                    <div class="col-sm-12">
-                      <!-- Single Form Start -->
-                      <div class="single-form">
-                        <input type="text" placeholder="Subject" name="sub" required>
-                      </div>
-                      <!-- Single Form End -->
-                    </div>
-                    <div class="col-sm-12">
-                      <!-- Single Form Start -->
-                      <div class="single-form">
-                        <textarea placeholder="Write A Message" name="msg"></textarea>
-                      </div>
-                      <!-- Single Form End -->
-                    </div>
-                    <div class="col-sm-12">
-                      <!--  Single Form Start -->
-                      <div class="form-btn text-center">
-                        <button class="btn" type="submit" name="submit">Send Message</button>
-                      </div>
-                      <!--  Single Form End -->
-                    </div>
-                  </div>
-                </form>
-                
-            </div>
-            <!-- Registration Form End -->
+   
+<div class="contact-form">
+    <h2>Contact Us</h2>
+    <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
+        <div class="single-form">
+            <input type="text" placeholder="Name *" name="name" required>
+        </div>
+        <div class="single-form">
+            <input type="email" placeholder="Email *" name="email" required>
+        </div>
+        <div class="single-form phone-container">
+            <select name="country_code" required>
+             <option value="+1" class="flag-icon flag-icon-us"> +1 USA</option>
+                <option value="+91">IND +91 Afghanistan</option>
+                <option value="+355">🇦🇱 +355 Albania</option>
+                <option value="+213">🇩🇿 +213 Algeria</option>
+                <option value="+376">🇦🇩 +376 Andorra</option>
+                <option value="+244">🇦🇴 +244 Angola</option>
+                <option value="+54">🇦🇷 +54 Argentina</option>
+                <option value="+374">🇦🇲 +374 Armenia</option>
+                <option value="+61">🇦🇺 +61 Australia</option>
+                <option value="+43">🇦🇹 +43 Austria</option>
+                <option value="+994">🇦🇿 +994 Azerbaijan</option>
+                <!-- Add more options with emoji flags if needed -->
+            </select>
+            <input type="tel" placeholder="Phone" maxlength="10" name="phone" required>
+        </div>
+        <div class="single-form">
+            <input type="text" placeholder="Subject" name="sub" required>
+        </div>
+        <div class="single-form">
+            <textarea placeholder="Write A Message" name="msg"></textarea>
+        </div>
+        <div class="form-btn">
+            <button type="submit" name="submit">Send Message</button>
+        </div>
+    </form>
+</div>     <!-- Registration Form End -->
         </div>
     </div>
 </div>
@@ -1315,39 +1336,10 @@ if (isset($_POST['submit'])) {
         <!-- back to top end -->
 
     </div>
+
 <script>
+
     // Get modal element
-    // Check if the form was already submitted in this session
-if (!sessionStorage.getItem('formSubmitted')) {
-    form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent default form submission
-
-        // Show success message
-        Swal.fire({
-            title: "Success!",
-            text: "Your request has been submitted successfully!",
-            icon: "success",
-            showConfirmButton: true
-        });
-
-        // Set form submission flag
-        sessionStorage.setItem('formSubmitted', 'true');
-
-        // Clear the form inputs
-        form.reset();
-
-        // Redirect after 5 seconds
-        setTimeout(function () {
-            window.location.href = window.location.href.split("?")[0];
-        }, 5000);
-    });
-}
-
-// Optional: Clear form submission flag when reloading the page or opening the form again
-window.onload = function() {
-    sessionStorage.removeItem('formSubmitted'); // Clear the submission flag if you want
-};
-
 var modal = document.getElementById("contactModal");
 // Get the button that opens the modal
 var btn = document.querySelector(".btn-secondary");

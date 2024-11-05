@@ -1,4 +1,4 @@
-        <?php
+<?php
         include("db.php");
         ?>
 
@@ -40,6 +40,9 @@
 
         </head>
         <style>
+            .pd{
+                padding-top: 11px;
+            }
         .mtr{
         margin: 80px 0px;
         }
@@ -78,7 +81,7 @@
         <div class="col-lg-12">
         <!-- Page Banner Content Start -->
         <div class="page-banner text-center">
-        <h2 class="title text-black">Blog Details</h2>
+        <h2 class="title text-white">Blog Details</h2>
         <ul class="breadcrumb justify-content-center">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
         <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
@@ -174,9 +177,9 @@
         </div> -->
         <div class="blog-details-share llt">
         <ul class="social-share">
-        <li><a class="share-facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a class="share-twitter" href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a class="share-pinterest" href="#"><i class="fab fa-pinterest-p"></i></a></li>
+        <li><a class="share-facebook" href="#"><i class="fab fa-facebook-f pd"></i></a></li>
+        <li><a class="share-twitter" href="#"><i class="fab fa-twitter pd"></i></a></li>
+        <li><a class="share-pinterest" href="#"><i class="fab fa-pinterest-p pd"></i></a></li>
         </ul>
         </div>
         </div>
